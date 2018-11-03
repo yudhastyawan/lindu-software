@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="da7fdfce-8593-409e-84a5-b3d5dfc788fb" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="actInvModel.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/actInvModel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="177" column="23" selection-start-line="177" selection-start-column="23" selection-end-line="177" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#325#2265#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/module/Tomography/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="879">
+              <caret line="190" column="31" lean-forward="true" selection-start-line="190" selection-start-column="31" selection-end-line="190" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="invModel.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/invModel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4539">
+              <caret line="279" column="26" selection-start-line="279" selection-start-column="26" selection-end-line="279" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="actFwdModel.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/actFwdModel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2516">
+              <caret line="153" column="56" selection-start-line="153" selection-start-column="56" selection-end-line="153" selection-end-column="56" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="basic.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/basic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="799">
+              <caret line="47" column="51" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="actFwdModel_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/actFwdModel_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2754">
+              <caret line="167" column="53" selection-start-line="167" selection-start-column="53" selection-end-line="167" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="displayPer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/displayPer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="867">
+              <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="displayRms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/displayRms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fwdmodel.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/fwdmodel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3774">
+              <caret line="232" column="54" selection-start-line="231" selection-end-line="232" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tomo_inverse.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tomography/subroutine/tomo_inverse.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1615">
+              <caret line="166" column="45" selection-start-line="166" selection-start-column="8" selection-end-line="166" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#284#2702#0" />
+                <element signature="e#9623#16330#0" />
+                <element signature="e#16453#27113#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>relocate</find>
+      <find>thread</find>
+      <find>loadData</find>
+      <find>Open</find>
+      <find>menuba</find>
+      <find>def Open</find>
+      <find>ok_clic</find>
+      <find>relocate_ok_clic</find>
+      <find>tabcl</find>
+      <find>closeTab</find>
+      <find>tab_graph</find>
+      <find>act_loaddata</find>
+      <find>Scroll</find>
+      <find>QT5Mpl</find>
+      <find>pop</find>
+      <find>menubar</find>
+      <find>.text()</find>
+      <find>tabclo</find>
+      <find>closeTab_tabel</find>
+      <find>main_view2D</find>
+      <find>wizar</find>
+      <find>event</find>
+      <find>fromfile</find>
+      <find>tofile</find>
+      <find>Worker</find>
+      <find>view2d</find>
+      <find>[oi, pi]</find>
+      <find>vxyz</find>
+      <find>mainLayout</find>
+      <find>return xi, yi</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>')</replace>
+      <replace>graphdat</replace>
+      <replace>ph2dt</replace>
+      <replace>.setText()</replace>
+      <replace>source</replace>
+      <replace>station</replace>
+      <replace>velocity</replace>
+      <replace>xdata</replace>
+      <replace>ydata</replace>
+      <replace>[p, o]</replace>
+      <replace>[pi, oi]</replace>
+      <replace>vel</replace>
+      <replace>self.mainLayout</replace>
+      <replace>return xa, ya</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/subroutine/time/tictac.py" />
+        <option value="$PROJECT_DIR$/subroutine/thread/threading.py" />
+        <option value="$PROJECT_DIR$/module/GAD/testing.py" />
+        <option value="$PROJECT_DIR$/module/JHD/subroutine/pyqtEditable.py" />
+        <option value="$PROJECT_DIR$/module/GAD/main.py" />
+        <option value="$PROJECT_DIR$/module/hypoDD/main.py" />
+        <option value="$PROJECT_DIR$/module/JHD/main.py" />
+        <option value="$PROJECT_DIR$/module/Visualization/main.py" />
+        <option value="$PROJECT_DIR$/subroutine/icon/Icon.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/subroutine/tomo_log.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/main.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/actRay.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/tester.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/createvel2d.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/submodule/tabCreateModel.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/subroutine/tomo_inverse.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/basic.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/subroutine/display.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/display.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/displayVel.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/fwdmodel.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/displayPer.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/crtmodel.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/main.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/actCrtModel.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/displayRms.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/invModel.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/actFwdModel.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/actFwdModel_test.py" />
+        <option value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/actInvModel.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-149" />
+    <option name="y" value="270" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Lindu 1.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lindu 1.1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lindu 1.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lindu 1.1" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lindu 1.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lindu 1.1" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+              <item name="Tomography" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lindu 1.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lindu 1.1" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+              <item name="Tomography" type="462c0819:PsiDirectoryNode" />
+              <item name="submodule" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lindu 1.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lindu 1.1" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+              <item name="Tomography" type="462c0819:PsiDirectoryNode" />
+              <item name="submodule" type="462c0819:PsiDirectoryNode" />
+              <item name="analyze2D" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lindu 1.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lindu 1.1" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+              <item name="Tomography" type="462c0819:PsiDirectoryNode" />
+              <item name="submodule" type="462c0819:PsiDirectoryNode" />
+              <item name="analyze2D" type="462c0819:PsiDirectoryNode" />
+              <item name="submodule" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lindu 1.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lindu 1.1" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+              <item name="Tomography" type="462c0819:PsiDirectoryNode" />
+              <item name="submodule" type="462c0819:PsiDirectoryNode" />
+              <item name="analyze2D" type="462c0819:PsiDirectoryNode" />
+              <item name="submodule" type="462c0819:PsiDirectoryNode" />
+              <item name="subroutine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lindu 1.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lindu 1.1" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+              <item name="Tomography" type="462c0819:PsiDirectoryNode" />
+              <item name="subroutine" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lindu 1.2" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Proyek\PYCHARM\Lindu 1.1\module\Visualization\subroutine" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Proyek\PYCHARM\Lindu 1.1\module\Tomography\submodule\analyze2D\submodule\subroutine" />
+      <recent name="D:\Proyek\PYCHARM\Lindu 1.1\module\Tomography\submodule\analyze2D\submodule" />
+      <recent name="D:\Proyek\PYCHARM\Lindu 1.1\module\Tomography\subroutine" />
+      <recent name="D:\Proyek\PYCHARM\Lindu 1.1\module\hypoDD\engine" />
+      <recent name="D:\Proyek\PYCHARM\Lindu 1.1\module\GAD\engine" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="actCrtModel" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Lindu 1.1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/actCrtModel.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="actFwdModel_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Lindu 1.1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/actFwdModel_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="actInvModel" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Lindu 1.1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/actInvModel.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="displayVel" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Lindu 1.1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/displayVel.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Lindu 1.1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.actInvModel" />
+      <item itemvalue="Python.displayVel" />
+      <item itemvalue="Python.actCrtModel" />
+      <item itemvalue="Python.actFwdModel_test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.actFwdModel_test" />
+        <item itemvalue="Python.actInvModel" />
+        <item itemvalue="Python.actCrtModel" />
+        <item itemvalue="Python.displayVel" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da7fdfce-8593-409e-84a5-b3d5dfc788fb" name="Default" comment="" />
+      <created>1532342037094</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1532342037094</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21522693" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32913387" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32913387" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="66" column="67" selection-start-line="66" selection-start-column="67" selection-end-line="66" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11322">
+          <caret line="666" column="23" lean-forward="true" selection-start-line="666" selection-start-column="23" selection-end-line="666" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/subroutine/tomo_log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="99" lean-forward="true" selection-start-line="1" selection-start-column="27" selection-end-line="2" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5933">
+          <caret line="349" column="58" lean-forward="true" selection-start-line="349" selection-start-column="58" selection-end-line="349" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="39" lean-forward="true" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9894">
+          <caret line="592" column="38" selection-start-line="592" selection-start-column="38" selection-end-line="592" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/subroutine/display.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="113" column="5" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subroutine/time/tictac.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/subroutine/tomo_inverse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2788">
+          <caret line="164" column="71" selection-start-line="164" selection-start-column="71" selection-end-line="164" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subroutine/thread/threading.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/subroutine/Display_exp.py" />
+    <entry file="file://$PROJECT_DIR$/module/Tomography/subroutine/Displaytest.py" />
+    <entry file="file://$PROJECT_DIR$/module/Tomography/testing.py" />
+    <entry file="file://$PROJECT_DIR$/subroutine/time/tictac.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/subroutine/Display_exp.py" />
+    <entry file="file://$PROJECT_DIR$/module/GAD/subroutine/directory.py" />
+    <entry file="file://$PROJECT_DIR$/module/GAD/testing.py" />
+    <entry file="file://$PROJECT_DIR$/module/GAD/engine/engines-gad">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="53" selection-start-column="53" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subroutine/thread/threading.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="58" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Visualization/subroutine/pyqtEditable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Window_Main.py" />
+    <entry file="file://$PROJECT_DIR$/module/hypoDD/Window_Main.py" />
+    <entry file="file://$PROJECT_DIR$/module/JHD/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="171" column="64" selection-start-line="171" selection-start-column="64" selection-end-line="171" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subroutine/icon/Icon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/subroutine/tomo_log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="98" column="21" lean-forward="true" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/hypoDD/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4828">
+          <caret line="308" column="44" selection-start-line="308" selection-start-column="44" selection-end-line="308" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/GAD/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="87" column="41" lean-forward="true" selection-end-line="87" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Visualization/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="29" column="40" lean-forward="true" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/createvel2d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="83" column="52" selection-start-line="83" selection-start-column="52" selection-end-line="83" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/actRay.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/submodule/tabCreateModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5848">
+          <caret line="367" column="63" selection-start-line="365" selection-start-column="16" selection-end-line="367" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/subroutine/display.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3995">
+          <caret line="246" column="27" selection-start-line="246" selection-start-column="27" selection-end-line="246" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/display.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2074">
+          <caret line="136" column="36" selection-start-line="136" selection-start-column="36" selection-end-line="136" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/displayVel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3298">
+          <caret line="208" column="36" selection-start-line="208" selection-start-column="36" selection-end-line="208" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/crtmodel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3077">
+          <caret line="191" column="35" selection-start-line="191" selection-start-column="35" selection-end-line="191" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/actCrtModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6409">
+          <caret line="382" selection-start-line="382" selection-end-line="382" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/subroutine/tomo_inverse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1615">
+          <caret line="166" column="45" selection-start-line="166" selection-start-column="8" selection-end-line="166" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#284#2702#0" />
+            <element signature="e#9623#16330#0" />
+            <element signature="e#16453#27113#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/displayPer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/displayRms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/fwdmodel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3774">
+          <caret line="232" column="54" selection-start-line="231" selection-end-line="232" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/actFwdModel_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2754">
+          <caret line="167" column="53" selection-start-line="167" selection-start-column="53" selection-end-line="167" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/actFwdModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2516">
+          <caret line="153" column="56" selection-start-line="153" selection-start-column="56" selection-end-line="153" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/basic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" column="51" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/invModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4539">
+          <caret line="279" column="26" selection-start-line="279" selection-start-column="26" selection-end-line="279" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/submodule/analyze2D/submodule/subroutine/actInvModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="177" column="23" selection-start-line="177" selection-start-column="23" selection-end-line="177" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#325#2265#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tomography/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="879">
+          <caret line="190" column="31" lean-forward="true" selection-start-line="190" selection-start-column="31" selection-end-line="190" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

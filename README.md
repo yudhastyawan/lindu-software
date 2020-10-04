@@ -7,7 +7,7 @@
 </p>
 Progress of Lindu Software Codes (for seismological data processing: determining and relocating hypocenter; traveltime tomography)
 
-This is the development codes for the future relase
+This is the development branch for the future release.
 
 # Developer
 If you would like to be the collaborator of this software, you could use these several steps for making your own environment in Lindu software repository.

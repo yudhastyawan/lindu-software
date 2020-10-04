@@ -277,3 +277,4 @@ $RECYCLE.BIN/
 .pkgs\
 build
 build\
+!build\lindu-setup.iss

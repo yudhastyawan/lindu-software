@@ -38,5 +38,5 @@ class Plugins(QtGui.QMenu):
 
     def act_plugins(self, val):
         module = importlib.import_module('plugins.{}.{}'.format(self.plugFolds[val],self.plugFolds[val]))
-        window = module.MainWindow(self)
+        window = module.MainWindow(parent=self)
         window.show()

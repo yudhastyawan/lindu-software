@@ -61,7 +61,7 @@ and install to your environment:
 `pip install basemap-1.2.2-cp38-cp38-win_amd64.whl`
 
 ## 6. Check the compatibility of Windows version
-Unfortunately, some features in PyQt5 are not compatible with the previous Windows version. Therefore, if you are using Windows 8.1, rename `Qt5Bluetooth.dll` to `Qt5Bluetooth.dll1` in `.venv\Lib\site-packages\PyQt5\Qt\bin\`
+*Caution: Didn't try it yet*
 
 ## 7. Build an .exe program
 `python setup.py build`

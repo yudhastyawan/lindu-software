@@ -274,7 +274,7 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm+all,windows,python,git
 .pkgs
-.pkgs\
-build
-build\
-!build\lindu-setup.iss
+.pkgs/
+!build/
+build/*
+!build/*.iss

@@ -6,9 +6,14 @@ def hack(finder, module):
 cx_Freeze.hooks.load_matplotlib = hack
 import scipy
 import matplotlib
+import shutil
 
-# os.environ['TCL_LIBRARY'] = r'C:\Users\Yudha Styawan\.conda\envs\py36\tcl\tcl8.6'
-# os.environ['TK_LIBRARY'] = r'C:\Users\Yudha Styawan\.conda\envs\py36\tcl\tk8.6'
+if os.path.exists(os.path.join(os.getcwd(),'build','exe.win-amd64-3.6')):
+    if os.listdir(os.path.join(os.getcwd(),'build','exe.win-amd64-3.6')) == 0:
+        os.rmdir(os.path.join(os.getcwd(),'build','exe.win-amd64-3.6'))
+    else:
+        shutil.rmtree(os.path.join(os.getcwd(),'build','exe.win-amd64-3.6'))
+
 PYTHON_INSTALL_DIR = os.path.dirname(os.path.dirname(os.__file__))
 os.environ['TCL_LIBRARY'] = os.path.join(PYTHON_INSTALL_DIR, 'tcl', 'tcl8.6')
 os.environ['TK_LIBRARY'] = os.path.join(PYTHON_INSTALL_DIR, 'tcl', 'tk8.6')
@@ -24,7 +29,9 @@ build_exe_options = {"packages": ["pyface.ui.qt4", "tvtk.vtk_module", "tvtk.pyfa
                                        os.path.join(PYTHON_INSTALL_DIR, 'DLLs', 'tcl86t.dll'),
                                        os.path.join(os.getcwd(),'subroutine/'),
                                        os.path.join(os.getcwd(),'module/'),
-                                       os.path.join(os.getcwd(),'bug/'),],
+                                       os.path.join(os.getcwd(),'bug/'),
+                                       os.path.join(os.getcwd(),'plugins/'),
+                                       os.path.join(os.getcwd(),'tests/'),],
                      "includes":['PyQt4.QtCore','PyQt4.QtGui','mayavi','PyQt4'],
                      'excludes':'Tkinter',
                     "namespace_packages": ['mayavi']
@@ -32,12 +39,13 @@ build_exe_options = {"packages": ["pyface.ui.qt4", "tvtk.vtk_module", "tvtk.pyfa
 
 
 executables = [
-    Executable('main.py', targetName="main.exe",base = 'Win32GUI',)
+    Executable('main.py', targetName="LindSoft.exe",base = 'Win32GUI',
+               icon=os.path.join(os.getcwd(),'subroutine/icon/Icon_Files/FIX/LOGO.ico'),)
 ]
 
-setup(name='main',
-      version='1.0',
-      description='',
+setup(name='Lindu Software',
+      version='0.1.0',
+      description='Open-Source software for seismological data processing: determining and relocating hypocenter; traveltime tomography',
       options = {"build_exe": build_exe_options},
       executables=executables,
       )

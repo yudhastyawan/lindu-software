@@ -229,11 +229,11 @@ class MayaviQWidget(QtGui.QWidget):
 
 if __name__ == "__main__":
 
-    logdata = "Z:\Proyek\INOUT\Tomo-real\evt/15real.log"
-    vdata = "Z:\Proyek\INOUT\Tomo-real\evt/15vest.vel3d"
-    xdata = "Z:\Proyek\INOUT\Tomo-real\evt/15x.data"
-    ydata = "Z:\Proyek\INOUT\Tomo-real\evt/15y.data"
-    zdata = "Z:\Proyek\INOUT\Tomo-real\evt/15z.data"
+    logdata = os.path.join(os.getcwd(),'tests','display',"15real.log")
+    vdata = os.path.join(os.getcwd(),'tests','display',"15vest.vel3d")
+    xdata = os.path.join(os.getcwd(),'tests','display',"15x.data")
+    ydata = os.path.join(os.getcwd(),'tests','display',"15y.data")
+    zdata = os.path.join(os.getcwd(),'tests','display',"15z.data")
     # Don't create a new QApplication, it would unhook the Events
     # set by Traits on the existing QApplication. Simply use the
     # '.instance()' method to retrieve the existing one.

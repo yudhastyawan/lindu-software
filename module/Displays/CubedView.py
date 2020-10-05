@@ -12,6 +12,10 @@ from mayavi import mlab
 class SetView(QtGui.QMainWindow):
     def __init__(self, tab, parent=None):
         super(SetView, self).__init__(parent)
+        mBar = self.menuBar()
+        mOpt = mBar.addMenu("Options")
+        mTest = mOpt.addAction("Testing the Example data")
+        mTest.triggered.connect(self.act_mTest)
         self.Settings()
         self.setCentralWidget(self.SetWind)
         self.tab = tab
@@ -62,11 +66,6 @@ class SetView(QtGui.QMainWindow):
         btn_enter_view.setSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
         btn_enter_view.clicked.connect(self.btn_enter_view_clicked)
 
-        btn_enter_test = QtGui.QPushButton()
-        btn_enter_test.setText('Example Data Test')
-        btn_enter_test.setSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
-        btn_enter_test.clicked.connect(self.btn_enter_test_clicked)
-
         # Set Layout
         # -> input to layout
         velLay = QtGui.QHBoxLayout()
@@ -91,7 +90,6 @@ class SetView(QtGui.QMainWindow):
         self.SetLay.addLayout(zLay)
         self.SetLay.addLayout(logLay)
         self.SetLay.addWidget(btn_enter_view)
-        self.SetLay.addWidget(btn_enter_test)
         self.SetLay.addStretch()
 
     def btn_search_vxyz_clicked(self):
@@ -128,7 +126,7 @@ class SetView(QtGui.QMainWindow):
         graph_widget.setWindowTitle(fil)
         self.tab.addTab(graph_widget,fil)
 
-    def btn_enter_test_clicked(self):
+    def act_mTest(self):
         logdata = os.path.join(os.getcwd(),"tests\display/15real.log")
         vdata = os.path.join(os.getcwd(),"tests\display/15vest.vel3d")
         xdata = os.path.join(os.getcwd(),"tests\display/15x.data")

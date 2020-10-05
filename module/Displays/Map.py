@@ -8,6 +8,10 @@ from mpl_toolkits.basemap import Basemap
 class SetView(QtGui.QMainWindow):
     def __init__(self, tab, parent=None):
         super(SetView, self).__init__(parent)
+        mBar = self.menuBar()
+        mOpt = mBar.addMenu("Options")
+        mTest = mOpt.addAction("Testing the Example data")
+        mTest.triggered.connect(self.act_mTest)
         self.Settings()
         self.setCentralWidget(self.SetWind)
         self.tab = tab
@@ -18,17 +22,12 @@ class SetView(QtGui.QMainWindow):
         self.SetWind.setLayout(self.SetLay)
 
         # -> filled
-        btn_enter_view = QtGui.QPushButton()
-        btn_enter_view.setText('Test!')
-        btn_enter_view.setSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
-        btn_enter_view.clicked.connect(self.btn_enter_view_clicked)
 
         # Set Layout
         # -> input to layout
-        self.SetLay.addWidget(btn_enter_view)
         self.SetLay.addStretch()
 
-    def btn_enter_view_clicked(self):
+    def act_mTest(self):
         graph_widget = MainView()
         # dir, fil = os.path.split(self.line_vxyz.text())
         fil = "Basemap"

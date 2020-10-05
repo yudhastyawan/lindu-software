@@ -80,6 +80,8 @@ class MainWindow(QtGui.QMainWindow):
         super(MainWindow, self).__init__(parent)
         mainwidget = QtGui.QWidget(self)
         self.setWindowTitle('Wizard BMKG buletin to PHA')
+        self.icon = QtGui.QIcon(os.path.join(os.getcwd(),'subroutine','icon','Icon_Files','FIX','LOGO.ico'))
+        self.setWindowIcon(self.icon)
         # self.setWindowFlag(Qt.WindowStaysOnTopHint)
 
         # build main layout

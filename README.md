@@ -129,7 +129,7 @@ If you will use this software, please add these references to your research:
 
 # Galleries
 <p align="center">
-	<img src="/imgs/lindu-dev-1.PNG" alt="Lindu Development" width="500"/>
+	<img src="/imgs/lindu-dev-1.PNG" alt="Lindu Development" width="800"/>
 	<br>
 	Lindu Progress (2020-10-05)
 	<br>

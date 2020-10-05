@@ -1,7 +1,7 @@
-import os
-os.environ['ETS_TOOLKIT'] = 'qt4'
-os.environ['QT_API'] = 'pyqt'
+import sys
 from pyface.qt import QtGui, QtCore
+import os
+
 from traits.api import HasTraits, Instance, on_trait_change, Button
 from traitsui.api import View, Item, Group
 from mayavi.core.ui.api import MayaviScene, MlabSceneModel, \
@@ -9,7 +9,150 @@ from mayavi.core.ui.api import MayaviScene, MlabSceneModel, \
 import numpy as np
 from mayavi import mlab
 
-################################################################################
+class SetView(QtGui.QMainWindow):
+    def __init__(self, tab, parent=None):
+        super(SetView, self).__init__(parent)
+        self.Settings()
+        self.setCentralWidget(self.SetWind)
+        self.tab = tab
+
+    def Settings(self):
+        self.SetWind = QtGui.QWidget()
+        self.SetLay = QtGui.QVBoxLayout()
+        self.SetWind.setLayout(self.SetLay)
+
+        # -> filled
+        self.line_vxyz = QtGui.QLineEdit()
+        self.line_vxyz.setPlaceholderText('path of vel3d (*.vel3d)')
+        btn_search_vxyz = QtGui.QToolButton()
+        btn_search_vxyz.setText('   ...   ')
+        # btn_search_vxyz.setSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
+        btn_search_vxyz.clicked.connect(self.btn_search_vxyz_clicked)
+
+        self.line_xdata = QtGui.QLineEdit()
+        self.line_xdata.setPlaceholderText('path of xdata (*.data)')
+        btn_search_xdata = QtGui.QToolButton()
+        btn_search_xdata.setText('   ...   ')
+        # btn_search_xdata.setSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
+        btn_search_xdata.clicked.connect(self.btn_search_xdata_clicked)
+
+        self.line_ydata = QtGui.QLineEdit()
+        self.line_ydata.setPlaceholderText('path of ydata (*.data)')
+        btn_search_ydata = QtGui.QToolButton()
+        btn_search_ydata.setText('   ...   ')
+        # btn_search_ydata.setSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
+        btn_search_ydata.clicked.connect(self.btn_search_ydata_clicked)
+
+        self.line_zdata = QtGui.QLineEdit()
+        self.line_zdata.setPlaceholderText('path of zdata (*.data)')
+        btn_search_zdata = QtGui.QToolButton()
+        btn_search_zdata.setText('   ...   ')
+        # btn_search_zdata.setSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
+        btn_search_zdata.clicked.connect(self.btn_search_zdata_clicked)
+
+        self.line_log = QtGui.QLineEdit()
+        self.line_log.setPlaceholderText('path of log (*.log)')
+        btn_search_log = QtGui.QToolButton()
+        btn_search_log.setText('   ...   ')
+        # btn_search_log.setSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
+        btn_search_log.clicked.connect(self.btn_search_log_clicked)
+
+        btn_enter_view = QtGui.QPushButton()
+        btn_enter_view.setText('View!')
+        btn_enter_view.setSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
+        btn_enter_view.clicked.connect(self.btn_enter_view_clicked)
+
+        btn_enter_test = QtGui.QPushButton()
+        btn_enter_test.setText('Example Data Test')
+        btn_enter_test.setSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
+        btn_enter_test.clicked.connect(self.btn_enter_test_clicked)
+
+        # Set Layout
+        # -> input to layout
+        velLay = QtGui.QHBoxLayout()
+        velLay.addWidget(self.line_vxyz)
+        velLay.addWidget(btn_search_vxyz)
+        xLay = QtGui.QHBoxLayout()
+        xLay.addWidget(self.line_xdata)
+        xLay.addWidget(btn_search_xdata)
+        yLay = QtGui.QHBoxLayout()
+        yLay.addWidget(self.line_ydata)
+        yLay.addWidget(btn_search_ydata)
+        zLay = QtGui.QHBoxLayout()
+        zLay.addWidget(self.line_zdata)
+        zLay.addWidget(btn_search_zdata)
+        logLay = QtGui.QHBoxLayout()
+        logLay.addWidget(self.line_log)
+        logLay.addWidget(btn_search_log)
+
+        self.SetLay.addLayout(velLay)
+        self.SetLay.addLayout(xLay)
+        self.SetLay.addLayout(yLay)
+        self.SetLay.addLayout(zLay)
+        self.SetLay.addLayout(logLay)
+        self.SetLay.addWidget(btn_enter_view)
+        self.SetLay.addWidget(btn_enter_test)
+        self.SetLay.addStretch()
+
+    def btn_search_vxyz_clicked(self):
+        open = QtGui.QFileDialog()
+        filepath = open.getOpenFileName(self, 'Open velocity 3D (*.vel3d) file', '/', "Format File (*.vel3d)")
+        self.line_vxyz.setText(filepath)
+
+    def btn_search_xdata_clicked(self):
+        open = QtGui.QFileDialog()
+        filepath = open.getOpenFileName(self, 'Open x (*.data) file', '/', "Format File (*.data)")
+        self.line_xdata.setText(filepath)
+
+    def btn_search_ydata_clicked(self):
+        open = QtGui.QFileDialog()
+        filepath = open.getOpenFileName(self, 'Open y (*.data) file', '/', "Format File (*.data)")
+        self.line_ydata.setText(filepath)
+
+    def btn_search_zdata_clicked(self):
+        open = QtGui.QFileDialog()
+        filepath = open.getOpenFileName(self, 'Open z (*.data) file', '/', "Format File (*.data)")
+        self.line_zdata.setText(filepath)
+
+    def btn_search_log_clicked(self):
+        open = QtGui.QFileDialog()
+        filepath = open.getOpenFileName(self, 'Open log (*.log) file', '/', "Format File (*.log)")
+        self.line_log.setText(filepath)
+
+    def btn_enter_view_clicked(self):
+        graph_widget = MainView(self.line_log.text(),self.line_vxyz.text(),self.line_xdata.text(),self.line_ydata.text(),
+                                       self.line_zdata.text())
+        dir, fil = os.path.split(self.line_vxyz.text())
+        graph_widget.popIn.connect(self.addTab)
+        graph_widget.popOut.connect(self.removeTab)
+        graph_widget.setWindowTitle(fil)
+        self.tab.addTab(graph_widget,fil)
+
+    def btn_enter_test_clicked(self):
+        logdata = os.path.join(os.getcwd(),"tests\display/15real.log")
+        vdata = os.path.join(os.getcwd(),"tests\display/15vest.vel3d")
+        xdata = os.path.join(os.getcwd(),"tests\display/15x.data")
+        ydata = os.path.join(os.getcwd(),"tests\display/15y.data")
+        zdata = os.path.join(os.getcwd(),"tests\display/15z.data")
+        graph_widget = MainView(logdata,vdata,xdata,ydata,zdata)
+        fil = "3D Cube Test"
+        graph_widget.popIn.connect(self.addTab)
+        graph_widget.popOut.connect(self.removeTab)
+        graph_widget.setWindowTitle(fil)
+        self.tab.addTab(graph_widget,fil)
+
+    def addTab(self, widget):
+        if self.tab.indexOf(widget) == -1:
+            widget.setWindowFlags(QtCore.Qt.Widget)
+            self.tab.addTab(widget, widget.windowTitle())
+
+    def removeTab(self, widget):
+        index = self.tab.indexOf(widget)
+        if index != -1:
+            self.tab.removeTab(index)
+            widget.setWindowFlags(QtCore.Qt.Window)
+            widget.show()
+
 #The actual visualization
 class Blankvir(HasTraits):
     scene = Instance(MlabSceneModel, ())
@@ -109,10 +252,21 @@ class Visualization(HasTraits):
 
 ################################################################################
 # The QWidget containing the visualization, this is pure PyQt4 code.
-class MayaviQWidget(QtGui.QWidget):
+class MainView(QtGui.QMainWindow):
+    popOut = QtCore.Signal(QtGui.QWidget)
+    popIn = QtCore.Signal(QtGui.QWidget)
     def __init__(self, logdata, vdata, xdata, ydata, zdata, parent=None):
-        QtGui.QWidget.__init__(self, parent)
-        themlayout = QtGui.QVBoxLayout(self)
+        QtGui.QMainWindow.__init__(self, parent)
+        mBar = self.menuBar()
+        mWindow = mBar.addMenu("Window")
+        mPopOut = mWindow.addAction("Pop Out")
+        mPopIn = mWindow.addAction("Pop In")
+        mPopOut.triggered.connect(lambda: self.popOut.emit(self))
+        mPopIn.triggered.connect(lambda: self.popIn.emit(self))
+        wid = QtGui.QWidget()
+        self.setCentralWidget(wid)
+        themlayout = QtGui.QVBoxLayout()
+        wid.setLayout(themlayout)
         themlayout.setContentsMargins(0, 0, 0, 0)
         themlayout.setSpacing(0)
 
@@ -139,7 +293,7 @@ class MayaviQWidget(QtGui.QWidget):
         self.z = z
         self.vxyz = vxyz
 
-        self.main_widget = QtGui.QWidget(self)
+        self.main_widget = QtGui.QWidget()
         self.vbl = QtGui.QVBoxLayout(self.main_widget)
 
         view_button = QtGui.QPushButton()
@@ -226,49 +380,3 @@ class MayaviQWidget(QtGui.QWidget):
 
     def closeEvent(self, event):
         self.ui.close()
-
-if __name__ == "__main__":
-
-    logdata = os.path.join(os.getcwd(),'tests','display',"15real.log")
-    vdata = os.path.join(os.getcwd(),'tests','display',"15vest.vel3d")
-    xdata = os.path.join(os.getcwd(),'tests','display',"15x.data")
-    ydata = os.path.join(os.getcwd(),'tests','display',"15y.data")
-    zdata = os.path.join(os.getcwd(),'tests','display',"15z.data")
-    # Don't create a new QApplication, it would unhook the Events
-    # set by Traits on the existing QApplication. Simply use the
-    # '.instance()' method to retrieve the existing one.
-    app = QtGui.QApplication.instance()
-    # container = QtGui.QWidget()
-
-    mayavi_widget = MayaviQWidget(logdata,vdata,xdata,ydata,zdata)
-
-    # container.setWindowTitle("Embedding Mayavi in a PyQt4 Application")
-    # # define a "complex" layout to test the behaviour
-    # layout = QtGui.QHBoxLayout(container)
-    #
-    # button_container = QtGui.QWidget()
-    # button_layout =  QtGui.QVBoxLayout(button_container)
-
-    # button1 = QtGui.QPushButton('1')
-    # button1.clicked.connect(mayavi_widget.visualization.update_plot)
-    # button_layout.addWidget(button1)
-    #
-    # button2 = QtGui.QPushButton('2')
-    # button2.clicked.connect(mayavi_widget.visualization.second_plot)
-    # button_layout.addWidget(button2)
-    #
-    # button3 = QtGui.QPushButton('3')
-    # button3.clicked.connect(mayavi_widget.visualization.third_plot)
-    # button_layout.addWidget(button3)
-
-    # layout.addWidget(button_container)
-    # button_container.show()
-
-    # layout.addWidget(mayavi_widget)
-    # container.show()
-    # window = QtGui.QMainWindow()
-    # window.setCentralWidget(container)
-    mayavi_widget.show()
-
-    # Start the main event loop.
-    app.exec_()

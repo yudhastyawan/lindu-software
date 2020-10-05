@@ -5,7 +5,7 @@
 #define MyAppVersion "0.1.0"
 #define MyAppPublisher "Computational Geophysics - Institut Teknologi Sumatera"
 #define MyAppURL "https://github.com/comp-geoph-itera/lindu-software"
-#define MyAppExeName "main.exe"
+#define MyAppExeName "LindSoft.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -27,10 +27,11 @@ LicenseFile=C:\Users\Yudha Styawan\projects\lind-dev\LICENSE.md
 ;PrivilegesRequired=lowest
 OutputDir=C:\Users\Yudha Styawan\projects\lind-dev\build
 OutputBaseFilename=Lindu-setup
-SetupIconFile=C:\Users\Yudha Styawan\projects\lind-dev\subroutine\icon\Icon_Files\FIX\Splash Screen.ico
+SetupIconFile=C:\Users\Yudha Styawan\projects\lind-dev\subroutine\icon\Icon_Files\FIX\LOGO.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
+WizardSmallImageFile=C:\Users\Yudha Styawan\projects\lind-dev\subroutine\icon\Icon_Files\FIX\LOGO.bmp
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -40,7 +41,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 6.1; Check: not IsAdminInstallMode
 
 [Files]
-Source: "C:\Users\Yudha Styawan\projects\lind-dev\build\exe.win-amd64-3.6\main.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Yudha Styawan\projects\lind-dev\build\exe.win-amd64-3.6\LindSoft.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Yudha Styawan\projects\lind-dev\build\exe.win-amd64-3.6\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files !
 

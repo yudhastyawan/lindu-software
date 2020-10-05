@@ -1,3 +1,3 @@
-D:
-cd D:\Proyek\PYCHARM\Lindu 1.1\module\hypoDD\engine
+C:
+cd C:\Users\Yudha Styawan\projects\lind-dev\module\hypoDD\engine
 ph2dt ph2dt.inp

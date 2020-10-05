@@ -1,5 +1,5 @@
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
+from pyface.qt.QtCore import *
+from pyface.qt.QtGui import *
 
 class Scroller(QScrollArea):
     def __init__(self):

@@ -64,7 +64,7 @@ class MainWindow(QtGui.QMainWindow):
 
         # build group of input data
         group_input_data = QtGui.QGroupBox()
-        group_input_data.setSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Fixed)
+        group_input_data.setSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         group_input_data.setTitle('Path of Input Data')
         layout_input_data = QtGui.QFormLayout()
 
@@ -197,7 +197,7 @@ class MainWindow(QtGui.QMainWindow):
 
         # build group of output data
         group_output_data = QtGui.QGroupBox()
-        group_output_data.setSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Fixed)
+        group_output_data.setSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         group_output_data.setTitle('Path of Coordinate & Log Output')
         layout_output_data = QtGui.QFormLayout()
 
@@ -245,7 +245,7 @@ class MainWindow(QtGui.QMainWindow):
 
         # build group of output data
         group_resoutput_data = QtGui.QGroupBox()
-        group_resoutput_data.setSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Fixed)
+        group_resoutput_data.setSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         group_resoutput_data.setTitle('Path of Test Resolution Output')
         layout_resoutput_data = QtGui.QFormLayout()
 
@@ -257,7 +257,7 @@ class MainWindow(QtGui.QMainWindow):
 
         btn_search_velobsout = QtGui.QPushButton()
         btn_search_velobsout.setText('...')
-        btn_search_velobsout.setSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
+        btn_search_velobsout.setSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Expanding)
         btn_search_velobsout.clicked.connect(self.btn_search_velobsout_clicked)
         btn_search_velcalout = QtGui.QPushButton()
         btn_search_velcalout.setText('...')
@@ -272,7 +272,7 @@ class MainWindow(QtGui.QMainWindow):
 
         # build group of output data
         group_veloutput_data = QtGui.QGroupBox()
-        group_veloutput_data.setSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Fixed)
+        group_veloutput_data.setSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         group_veloutput_data.setTitle('Path of Velocity Inversion Output')
         layout_veloutput_data = QtGui.QFormLayout()
 
@@ -319,7 +319,7 @@ class MainWindow(QtGui.QMainWindow):
         okcancel_layout = QtGui.QHBoxLayout()
         okcancel_layout.addWidget(btn_settings_ok)
         okcancel_layout.addWidget(btn_settings_test)
-        self.relocatelayout.addLayout(okcancel_layout)
+        layout_parameters.addRow(okcancel_layout)
 
     def execute_this_btn_relocate_test_clicked(self, progress_callback):
         self.labstat.setText('Status: Processing . . .')
@@ -829,6 +829,12 @@ class MainWindow(QtGui.QMainWindow):
         self.dd2tomo.triggered.connect(self.act_dd2tomo)
         self.reopen.triggered.connect(self.act_reopen)
         self.analyze2d.triggered.connect(self.act_analyze2d)
+
+        # disabled
+        self.file.setDisabled(True)
+        self.convert.setDisabled(True)
+        self.process.setDisabled(True)
+        self.help.setDisabled(True)
 
     # action of bmkg2pha
     def act_dd2tomo(self):

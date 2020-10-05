@@ -1,0 +1,18 @@
+./example2
+
+308 events on the Calaveras fault including catalog and cross correlation P- and S-wave data. See Figure 3 in the User Guide.  
+
+To rerun this example type the following commands:
+
+../../src/ncsn2pha/ncsn2pha Calaveras.arc Calaveras.pha
+	to convert from NCSN catalog format to DD format
+
+../../src/ph2dt/ph2dt ph2dt.inp
+	to get travel time differences for pairs of earthquakes
+
+../../src/hypoDD/hypoDD hypoDD.inp
+	to run hypoDD to get double-difference locations
+
+To display the results with the enclosed Matlab script eqplot, open a Matlab window in this directory and type eqplot in the Matlab window. Edit the parameters at the beginning of the script to make changes to the view of the plot.
+
+Felix Waldhauser, 03/2001

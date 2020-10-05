@@ -1,0 +1,37 @@
+This directory contains several example and test data sets that can be used to learn how to run the program package hypoDD.
+
+The examples include the following data sets:
+
+         # of events   catalogP  catalogS  crosscorrP  crosscorrS
+example1      16          x          x          x           x       Hayward
+example2     308          x          x          x           x       Calaveras 
+example3  ~10000          x          x                              LongValley
+test1      12292     	  x          x   			    San Andreas
+test2       1014     	  x          x   			    San Andreas
+test3       8281     	  x          x   			    Hawaii 
+
+test1-3 are provided by Fred Klein. 
+
+Because of the size of example3 and test1-3, these files come in a different package named HYPODD_moreExamples.tar.gz.
+
+See Readme files in each directory on how to re-run the data sets.
+
+The program results should not depend on the various array dimensions.
+The program will run if the arrays are large enough, or fail if they
+are not.  The "example" and "test" files were run with these sizes
+(which may be larger than needed for some problems).  These are the
+default dimensions in the standard file hypoDD.inc:
+
+c parameters for medium size problems (e.g. : SUN ULTRA-2, 768 MB RAM)
+       parameter(MAXEVE=  13000,    
+     &          MAXDATA=  1300000,
+     &          MAXEVE0=  30,
+     &          MAXDATA0= 5000,
+     &          MAXLAY=   12,
+     &          MAXSTA=   2000,
+     &          MAXCL=    50)
+
+Note that if the arrays are not dimensioned large enough, hypoDD will
+report an error stating the parameter to increase, and stop.
+
+Felix Waldhauser & Fred Klein, 05/2001

@@ -10,6 +10,9 @@ from copy import deepcopy as copy
 from subroutine.icon.Icon import *
 from subroutine.plugins import plugins
 import module.Tomography.main as tg
+import module.GAD.main as gad
+import module.hypoDD.main as DD
+import module.Visualization.main as Vis
 from module.Displays import CubedView, Map
 
 class MainWindow(QtGui.QMainWindow):
@@ -34,9 +37,12 @@ class MainWindow(QtGui.QMainWindow):
         self.mFile = self.mbar.addMenu('File')
         self.mQuit = self.mFile.addAction('Quit')
         self.mProgram = self.mbar.addMenu('Programs')
+        self.mVis = self.mProgram.addAction('Seismic View (BETA)')
         self.mHypo = self.mProgram.addMenu('Hypocenter')
-        self.mLoc = self.mHypo.addAction('Location')
-        self.mReloc = self.mHypo.addAction('Relocation')
+        self.mLoc = self.mHypo.addAction('Location (GAD Wrapper)')
+        self.mReloc = self.mHypo.addMenu('Relocation')
+        self.mRelocDD = self.mReloc.addAction('HypoDD Wrapper')
+        self.mRelocJHD = self.mReloc.addAction('JHD Wrapper')
         self.mTomo = self.mProgram.addAction('Traveltime Tomography')
         self.mProject = self.mbar.addMenu('Project')
         self.mProjectEarthTomo = self.mProject.addAction('Earthquake Tomography Project')
@@ -51,16 +57,45 @@ class MainWindow(QtGui.QMainWindow):
 
         # add signal and slot to menubar
         self.mTomo.triggered.connect(self.act_mTomo)
+        self.mLoc.triggered.connect(self.act_mLoc)
+        self.mRelocDD.triggered.connect(self.act_mRelocDD)
+        self.mVis.triggered.connect(self.act_mVis)
+        self.mQuit.triggered.connect(self.act_mQuit)
 
         # Disable premature function
-        self.mQuit.setDisabled(True)
-        self.mHypo.setDisabled(True)
         self.mProject.setDisabled(True)
         self.mHelp.setDisabled(True)
         self.mAbout.setDisabled(True)
         self.mDoc.setDisabled(True)
         self.mDev.setDisabled(True)
+        self.mRelocJHD.setDisabled(True)
 
+    def act_mQuit(self):
+        self.close()
+
+    def act_mVis(self):
+        tomoDialog = Vis.MainWindow(self)
+        frameGm = tomoDialog.frameGeometry()
+        topLeftPoint = QtGui.QApplication.desktop().availableGeometry().topLeft()
+        frameGm.moveTopLeft(topLeftPoint)
+        tomoDialog.move(frameGm.topLeft())
+        tomoDialog.showMaximized()
+
+    def act_mRelocDD(self):
+        tomoDialog = DD.MainWindow(self)
+        frameGm = tomoDialog.frameGeometry()
+        topLeftPoint = QtGui.QApplication.desktop().availableGeometry().topLeft()
+        frameGm.moveTopLeft(topLeftPoint)
+        tomoDialog.move(frameGm.topLeft())
+        tomoDialog.show()
+
+    def act_mLoc(self):
+        tomoDialog = gad.MainWindow(self)
+        frameGm = tomoDialog.frameGeometry()
+        topLeftPoint = QtGui.QApplication.desktop().availableGeometry().topLeft()
+        frameGm.moveTopLeft(topLeftPoint)
+        tomoDialog.move(frameGm.topLeft())
+        tomoDialog.show()
 
     def act_mTomo(self):
         tomoDialog = tg.MainWindow(self)
@@ -71,8 +106,16 @@ class MainWindow(QtGui.QMainWindow):
         tomoDialog.show()
 
     def closeEvent(self, event):
-        if hasattr(self, 'mayavi_widget'):
-            self.mayavi_widget.ui.close()
+        quit_msg = "Are you sure you want to exit the program?"
+        reply = QtGui.QMessageBox.question(self, 'Message',
+                                           quit_msg, QtGui.QMessageBox.Yes, QtGui.QMessageBox.No)
+
+        if reply == QtGui.QMessageBox.Yes:
+            if hasattr(self, 'mayavi_widget'):
+                self.mayavi_widget.ui.close()
+            event.accept()
+        else:
+            event.ignore()
 
     def mainWidget(self):
         self.mainWin = QtGui.QWidget()

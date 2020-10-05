@@ -1,10 +1,13 @@
 from pyface.qt import QtGui, QtCore
 import traceback, sys
+import os
 
 class MessageBox(QtGui.QMessageBox):
     def __init__(self):
         QtGui.QMessageBox.__init__(self)
         self.setWindowTitle('Error !')
+        self.icon = QtGui.QIcon(os.path.join(os.getcwd(), 'subroutine', 'icon', 'Icon_Files', 'FIX', 'LOGO.ico'))
+        self.setWindowIcon(self.icon)
         self.setText("There is problem with this process")
         self.setInformativeText("Please check it again")
         self.setIcon(QtGui.QMessageBox.Information)
@@ -14,6 +17,8 @@ class MessageOpt(QtGui.QMessageBox):
     def __init__(self, title, maintext, opttext):
         QtGui.QMessageBox.__init__(self)
         self.setWindowTitle(title)
+        self.icon = QtGui.QIcon(os.path.join(os.getcwd(), 'subroutine', 'icon', 'Icon_Files', 'FIX', 'LOGO.ico'))
+        self.setWindowIcon(self.icon)
         self.setText(maintext)
         self.setInformativeText(opttext)
         self.setIcon(QtGui.QMessageBox.Information)

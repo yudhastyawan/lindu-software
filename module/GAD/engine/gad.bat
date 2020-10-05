@@ -1,3 +1,3 @@
-D:
-cd D:\Proyek\PYCHARM\Lindu 1.1\module\GAD\engine
+C:
+cd C:\Users\Yudha Styawan\projects\lind-dev\module\GAD\engine
 gad.exe

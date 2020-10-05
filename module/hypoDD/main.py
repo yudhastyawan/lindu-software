@@ -5,152 +5,15 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
+from pyface.qt.QtGui import *
+from pyface.qt.QtCore import *
 
 from module.hypoDD.subroutine.bmkg2pha import bmkg2pha
 from module.hypoDD.subroutine.ph2dt_inp import ph2t_inp
 from module.hypoDD.subroutine.hypoDD_inp import hypoDD_inp
 
-from mpl_toolkits.basemap import Basemap
-from matplotlib.figure import Figure
-from matplotlib.backends.backend_qt5agg import \
-    FigureCanvasQTAgg as FigureCanvas
-from matplotlib.backends.backend_qt5agg import \
-    NavigationToolbar2QT as NavigationToolbar
-from mpl_toolkits.mplot3d import Axes3D
-
 from subroutine.thread.threading import Worker, MessageBox, MessageOpt
 from subroutine.time.tictac import tic, tac
-
-class QT5MplCanvas2(FigureCanvas):
-    def __init__(self,filename,parent):
-        rms = self.extract(filename)
-
-        self.fig = Figure()
-        self.axes = self.fig.add_subplot(111)
-
-        # file = np.genfromtxt("D:/notepad\jhd-vel.txt")
-        # v1 = file[:, 0]
-        # v2 = file[:, 1]
-        # d = file[:, 2]
-
-        self.axes.set_title('RMS Error (Hist)')
-        self.axes.set_ylabel('N Event')
-        self.axes.set_xlabel('RMS')
-        self.axes.hist(rms, bins=5, color='blue')
-        # g = data
-        # data = data[:,:,int(np.fix(n*(len(Z)-1)/np.max(Z)))]
-
-        #------------------------
-        # m = Basemap(width=((lon.max()-lon.min())*111194.9266),height=((lat.max()-lat.min())*111194.9266),projection='aeqd', lat_0=lat.mean(), lon_0=lon.mean(), ax=self.axes)
-        # # fill background.
-        # m.drawmapboundary(fill_color='aqua')
-        # # draw coasts and fill continents.
-        # m.drawcoastlines(linewidth=0.5)
-        # m.fillcontinents(color='coral', lake_color='aqua')
-        # # draw parallels.
-        # parallels = np.arange(lat.min(), lat.max(), np.round((lat.max()-lat.min())*0.1,5))
-        # m.drawparallels(parallels, labels=[1, 0, 0, 0], fontsize=5)
-        # # draw meridians
-        # meridians = np.arange(lon.min(), lon.max(), np.round((lon.max()-lon.min())*0.1,5))
-        # m.drawmeridians(meridians, labels=[0, 0, 0, 1], fontsize=5)
-        # # draw a black dot at the center.
-        # x,y = m(lon,lat)
-        # m.plot(x, y, 'ro')
-        # #------------------------
-        #
-        # self.axes2 = self.fig.add_subplot(122,projection='3d')
-        # self.axes2.set_title('Location of Event')
-        # self.axes2.set_ylabel('Latitude')
-        # self.axes2.set_xlabel('Longitude')
-        # self.axes2.set_zlabel('Depth (km)')
-        # # #
-        #
-        FigureCanvas.__init__(self, self.fig)
-        # Axes3D.mouse_init(self.axes2)
-        # self.axes2.scatter(lat,lon,depth,color='red')
-        # # #
-        # self.axes2.set_zlim((np.max(depth), np.min(depth)))
-        #
-        self.setParent(parent)
-        FigureCanvas.setSizePolicy(self,
-                                   QSizePolicy.Expanding,
-                                   QSizePolicy.Expanding)
-        FigureCanvas.updateGeometry(self)
-
-    def extract(self,filename):
-        file = open(filename, 'r')
-        data = file.readlines()
-        for i in range(len(data)):
-            data[i] = data[i].split()
-        file.close()
-
-        rms = []
-        for i in range(len(data)):
-            rms.append(float(data[i][-2]))
-        rms = np.array(rms)
-        return rms
-
-class QT5MplCanvas(FigureCanvas):
-    def __init__(self,data,parent):
-        lat = np.zeros((len(data),1))
-        lon = np.zeros((len(data),1))
-        depth = np.zeros((len(data),1))
-
-        for i in range(len(data)):
-            lat[i] = data[i][1]
-            lon[i] = data[i][2]
-            depth[i] = data[i][3]
-
-        self.fig = Figure()
-        self.axes = self.fig.add_subplot(121)
-        self.axes.set_title('Location of Event')
-        self.axes.set_ylabel('Latitude')
-        self.axes.set_xlabel('Longitude')
-        # g = data
-        # data = data[:,:,int(np.fix(n*(len(Z)-1)/np.max(Z)))]
-
-        #------------------------
-        m = Basemap(width=((lon.max()-lon.min())*111194.9266),height=((lat.max()-lat.min())*111194.9266),projection='aeqd', lat_0=lat.mean(), lon_0=lon.mean(), ax=self.axes)
-        # fill background.
-        m.drawmapboundary(fill_color='aqua')
-        # draw coasts and fill continents.
-        m.drawcoastlines(linewidth=0.5)
-        m.fillcontinents(color='coral', lake_color='aqua')
-        # draw parallels.
-        # parallels = np.arange(-90, 90, np.ceil((lat.max()-lat.min())/10))
-        parallels = np.arange(lat.min(), lat.max(), np.round((lat.max() - lat.min()) * 0.1, 5))
-        m.drawparallels(parallels, labels=[1, 0, 0, 0], fontsize=5)
-        # draw meridians
-        # meridians = np.arange(0, 360, np.ceil((lon.max()-lon.min())/10))
-        meridians = np.arange(lon.min(), lon.max(), np.round((lon.max() - lon.min()) * 0.1, 5))
-        m.drawmeridians(meridians, labels=[0, 0, 0, 1], fontsize=5)
-        # draw a black dot at the center.
-        x,y = m(lon,lat)
-        m.plot(x, y, 'ro')
-        #------------------------
-
-        self.axes2 = self.fig.add_subplot(122,projection='3d')
-        self.axes2.set_title('Location of Event')
-        self.axes2.set_ylabel('Latitude')
-        self.axes2.set_xlabel('Longitude')
-        self.axes2.set_zlabel('Depth (km)')
-        # #
-
-        FigureCanvas.__init__(self, self.fig)
-        Axes3D.mouse_init(self.axes2)
-        self.axes2.scatter(lat,lon,depth,color='red')
-        # #
-        self.axes2.set_zlim((np.max(depth), np.min(depth)))
-
-        self.setParent(parent)
-        FigureCanvas.setSizePolicy(self,
-                                   QSizePolicy.Expanding,
-                                   QSizePolicy.Expanding)
-        FigureCanvas.updateGeometry(self)
-
 
 class MainWindow(QMainWindow):
     def __init__(self, parent = None):
@@ -161,6 +24,8 @@ class MainWindow(QMainWindow):
         self.enginespath = os.path.join(os.getcwd(),'module','hypoDD', 'engine', 'engines-hypoDD')
         self.engineshypoDDexe = os.path.join(os.getcwd(),'module','hypoDD', 'engine', 'hypoDD.exe')
         self.enginesph2dtexe = os.path.join(os.getcwd(),'module','hypoDD', 'engine', 'ph2dt.exe')
+        self.icon = QIcon(os.path.join(os.getcwd(), 'subroutine', 'icon', 'Icon_Files', 'FIX', 'LOGO.ico'))
+        self.setWindowIcon(self.icon)
         file = open(self.enginespath, 'w')
         file.write(self.engineshypoDDexe+'\n')
         file.write(self.enginesph2dtexe + '\n')
@@ -187,16 +52,8 @@ class MainWindow(QMainWindow):
         self.settings_group_relocate()
         group_relocate.setLayout(self.relocatelayout)
 
-        # build tab for view data
-        tab_view = QTabWidget()
-        self.tab_data()
-        self.tab_view2D()
-        tab_view.addTab(self.main_data,"Data")
-        tab_view.addTab(self.main_view2D, "View")
-
         # setting widget to layout
         layout_central.addWidget(group_relocate)
-        layout_central.addWidget(tab_view)
 
         # setting layout to form
         form_central.setLayout(layout_central)
@@ -211,8 +68,9 @@ class MainWindow(QMainWindow):
 
     def settings_group_relocate(self):
         # build main layout
-        self.relocatelayout = QVBoxLayout()
-
+        self.relocatelayout = QHBoxLayout()
+        added_layout = QVBoxLayout()
+        self.relocatelayout.addLayout(added_layout)
         #build inout layout
         inout_layout = QHBoxLayout()
 
@@ -263,7 +121,7 @@ class MainWindow(QMainWindow):
         layout_input_data.addRow(self.line_vel, btn_search_vel)
         group_input_data.setLayout(layout_input_data)
         inout_layout.addWidget(group_input_data)
-        self.relocatelayout.addLayout(inout_layout)
+        added_layout.addLayout(inout_layout)
 
         # build group of parameters
         group_parameters = QGroupBox()
@@ -339,7 +197,7 @@ class MainWindow(QMainWindow):
         layout_parameters.addRow(lb_cid, self.cid)
         layout_parameters.addRow(lb_vpvs, self.vpvs)
         group_parameters.setLayout(layout_parameters)
-        self.relocatelayout.addWidget(group_parameters)
+        added_layout.addWidget(group_parameters)
 
         # build group of output data
         group_output_data = QGroupBox()
@@ -452,7 +310,7 @@ class MainWindow(QMainWindow):
         # -> settings to layout
         okcancel_layout = QHBoxLayout()
         okcancel_layout.addWidget(btn_settings_ok)
-        self.relocatelayout.addLayout(okcancel_layout)
+        layout_weight.addLayout(okcancel_layout)
 
     def execute_this_btn_relocate_ok_clicked(self, progress_callback):
         self.labstat.setText('Status: Processing . . .')
@@ -508,6 +366,7 @@ class MainWindow(QMainWindow):
         self.cmd = QMainWindow()
         # self.cmd.setWindowFlag(Qt.WindowStaysOnTopHint)
         self.cmd.setWindowTitle('process log')
+        self.cmd.setWindowIcon(self.icon)
         self.cmd.resize(500,500)
         text = QTextEdit()
         text.setAcceptRichText(True)
@@ -535,217 +394,55 @@ class MainWindow(QMainWindow):
     def btn_search_dtcc_clicked(self):
         open = QFileDialog()
         filepath = open.getOpenFileName(self, 'Open dt.cc file', '/', "Format File (*.cc)")
-        self.line_dtcc.setText(filepath[0])
+        self.line_dtcc.setText(filepath)
 
     def btn_search_dtct_clicked(self):
         open = QFileDialog()
         filepath = open.getOpenFileName(self, 'Open dt.ct file', '/', "Format File (*.ct)")
-        self.line_dtct.setText(filepath[0])
+        self.line_dtct.setText(filepath)
 
     def btn_search_eventdatDD_clicked(self):
         open = QFileDialog()
         filepath = open.getOpenFileName(self, 'Open event file', '/', "Format File (*.dat *.sel)")
-        self.line_eventdatDD.setText(filepath[0])
+        self.line_eventdatDD.setText(filepath)
 
     def btn_search_stationDD_clicked(self):
         open = QFileDialog()
         filepath = open.getOpenFileName(self, 'Open station file', '/', "Format File (*.dat)")
-        self.line_stationDD.setText(filepath[0])
+        self.line_stationDD.setText(filepath)
 
     def btn_search_vel_clicked(self):
         open = QFileDialog()
         filepath = open.getOpenFileName(self, 'Open velocity file', '/', "Format File (*.vel)")
-        self.line_vel.setText(filepath[0])
+        self.line_vel.setText(filepath)
 
     def btn_search_hypoDDloc_clicked(self):
         open = QFileDialog()
         filepath = open.getSaveFileName(self, 'Save hypoDD.loc file', '/', "Format File (*.loc)")
-        self.line_hypoDDloc.setText(filepath[0])
+        self.line_hypoDDloc.setText(filepath)
 
     def btn_search_hypoDDreloc_clicked(self):
         open = QFileDialog()
         filepath = open.getSaveFileName(self, 'Save hypoDD.reloc file', '/', "Format File (*.reloc)")
-        self.line_hypoDDreloc.setText(filepath[0])
+        self.line_hypoDDreloc.setText(filepath)
 
     def btn_search_hypoDDsta_clicked(self):
         open = QFileDialog()
         filepath = open.getSaveFileName(self, 'Save hypoDD.sta file', '/', "Format File (*.sta)")
-        self.line_hypoDDsta.setText(filepath[0])
+        self.line_hypoDDsta.setText(filepath)
 
     def btn_search_hypoDDres_clicked(self):
         open = QFileDialog()
         filepath = open.getSaveFileName(self, 'Save hypoDD.res file', '/', "Format File (*.res)")
-        self.line_hypoDDres.setText(filepath[0])
+        self.line_hypoDDres.setText(filepath)
 
     def btn_search_hypoDDsrc_clicked(self):
         open = QFileDialog()
         filepath = open.getSaveFileName(self, 'Save hypoDD.src file', '/', "Format File (*.src)")
-        self.line_hypoDDsrc.setText(filepath[0])
+        self.line_hypoDDsrc.setText(filepath)
 
     def act_enter_nset(self):
         self.table_weighting.setRowCount(int(self.nset.text()))
-
-    def closeTab_tabel (self, currentIndex):
-        currentQWidget = self.tab_tabel.widget(currentIndex)
-        currentQWidget.deleteLater()
-        self.tab_tabel.removeTab(currentIndex)
-
-    def tab_data(self):
-        self.main_data = QWidget()
-        self.data_layout = QVBoxLayout()
-        self.tab_tabel = QTabWidget()
-        self.tab_tabel.setTabsClosable(True)
-        self.tab_tabel.tabCloseRequested.connect(self.closeTab_tabel)
-
-        # path
-        # -> build upper layout
-        path_layout = QHBoxLayout()
-
-        # -> filled
-        self.line_data = QLineEdit()
-        self.line_data.setPlaceholderText('path of data (all file format)')
-        btn_search_data = QPushButton()
-        btn_search_data.setText('...')
-        btn_search_data.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        btn_search_data.clicked.connect(self.btn_search_data_clicked)
-
-        btn_enter_data = QPushButton()
-        btn_enter_data.setText('View!')
-        btn_enter_data.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        btn_enter_data.clicked.connect(self.btn_enter_data_clicked)
-
-        # -> input to layout
-        path_layout.addWidget(self.line_data)
-        path_layout.addWidget(btn_search_data)
-        path_layout.addWidget(btn_enter_data)
-        self.data_layout.addLayout(path_layout)
-        self.data_layout.addWidget(self.tab_tabel)
-
-        # input layout to widget
-        self.main_data.setLayout(self.data_layout)
-
-    def btn_search_data_clicked(self):
-        open = QFileDialog()
-        filepath = open.getOpenFileName(self, 'Open file', '/', "Format File (*.*)")
-        self.line_data.setText(filepath[0])
-
-    def btn_enter_data_clicked(self):
-        graph_widget = QWidget()
-        graph_layout = QVBoxLayout()
-        file = open(self.line_data.text(), 'r')
-        viewit = file.readlines()
-        for i in range(len(viewit)):
-            viewit[i] = viewit[i].split()
-        file.close()
-
-        # view
-        tabel = QTableWidget()
-        tabel.setRowCount(len(viewit))
-        tabel.setColumnCount(len(viewit[0][:]))
-
-        for i in range(len(viewit)):
-            for j in range(len(viewit[0][:])):
-                tabel.setItem(i,j,QTableWidgetItem(viewit[i][j]))
-
-        graph_layout.addWidget(tabel)
-        graph_widget.setLayout(graph_layout)
-        dir, fil = os.path.split(self.line_data.text())
-        self.tab_tabel.addTab(graph_widget,fil)
-
-    def closeTab (self, currentIndex):
-        currentQWidget = self.tab_graph.widget(currentIndex)
-        currentQWidget.deleteLater()
-        self.tab_graph.removeTab(currentIndex)
-
-    def tab_view2D(self):
-        self.main_view2D = QWidget()
-        self.view_layout = QVBoxLayout()
-        self.tab_graph = QTabWidget()
-        self.tab_graph.setTabsClosable(True)
-        self.tab_graph.tabCloseRequested.connect(self.closeTab)
-
-        # path
-        # -> build upper layout
-        path_layout = QHBoxLayout()
-
-        # -> filled
-        self.line_view = QLineEdit()
-        self.line_view.setPlaceholderText('path of hypoDD.loc or hypoDD.reloc')
-        btn_search_view = QPushButton()
-        btn_search_view.setText('...')
-        btn_search_view.setSizePolicy(QSizePolicy.Fixed,QSizePolicy.Fixed)
-        btn_search_view.clicked.connect(self.btn_search_view_clicked)
-
-        btn_enter_view = QPushButton()
-        btn_enter_view.setText('View!')
-        btn_enter_view.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        btn_enter_view.clicked.connect(self.btn_enter_view_clicked)
-
-        # -> input to layout
-        path_layout.addWidget(self.line_view)
-        path_layout.addWidget(btn_search_view)
-        path_layout.addWidget(btn_enter_view)
-        self.view_layout.addLayout(path_layout)
-        self.view_layout.addWidget(self.tab_graph)
-
-        # input layout to widget
-        self.main_view2D.setLayout(self.view_layout)
-
-    def btn_search_view_clicked(self):
-        open = QFileDialog()
-        filepath = open.getOpenFileName(self, 'Open hypoDD.loc or .reloc file', '/', "Format File (*.loc *.reloc)")
-        self.line_view.setText(filepath[0])
-
-    def btn_enter_view_clicked(self):
-        graph_widget = QWidget()
-        graph_layout = QVBoxLayout()
-        file = open(self.line_view.text(), 'r')
-        viewit = file.readlines()
-        for i in range(len(viewit)):
-            viewit[i] = viewit[i].split()
-        file.close()
-
-
-        # canvas view
-        # -> build canvas
-        qmc = QT5MplCanvas(viewit,self.main_view2D)
-        ntb = NavigationToolbar(qmc, self.main_view2D)
-
-        # -> input to layout
-        graph_layout.addWidget(qmc)
-        graph_layout.addWidget(ntb)
-
-        graph_widget.setLayout(graph_layout)
-        dir, fil = os.path.split(self.line_view.text())
-        self.tab_graph.addTab(graph_widget,fil)
-
-    def btn_search_viewvel_clicked(self):
-        open = QFileDialog()
-        filepath = open.getOpenFileName(self, 'Open hypoDD.reloc file', '/', "Format File (*.reloc)")
-        self.line_viewvel.setText(filepath[0])
-
-    def btn_enter_viewvel_clicked(self):
-        graph_widget = QWidget()
-        graph_layout = QVBoxLayout()
-        # file = open(self.line_view.text(), 'r')
-        # viewit = file.readlines()
-        # for i in range(len(viewit)):
-        #     viewit[i] = viewit[i].split()
-        # file.close()
-
-
-        # canvas view
-        # -> build canvas
-        qmc = QT5MplCanvas2(self.line_viewvel.text(),self.velform)
-        ntb = NavigationToolbar(qmc, self.velform)
-        #
-        # # -> input to layout
-        graph_layout.addWidget(qmc)
-        graph_layout.addWidget(ntb)
-        #
-        graph_widget.setLayout(graph_layout)
-        dir, fil = os.path.split(self.line_viewvel.text())
-        self.tab_graphvel.addTab(graph_widget,fil)
 
     # create menubar
     def menubar(self):
@@ -754,54 +451,13 @@ class MainWindow(QMainWindow):
         self.bmkg2pha = self.convert.addAction('BMKG to PHA')
         self.ph2dt = self.convert.addAction('PHA to DT/SEL')
         self.settings = self.mbar.addAction('Settings')
-        self.analysis = self.mbar.addMenu('Analysis')
-        self.rms = self.analysis.addAction('Hist RMS Error')
         self.help = self.mbar.addAction('Help')
+        self.help.setDisabled(True)
 
         # add signal and slot to menubar
         self.bmkg2pha.triggered.connect(self.act_bmkg2pha)
-        self.rms.triggered.connect(self.act_rmsmodel)
         self.ph2dt.triggered.connect(self.act_ph2dt)
         self.settings.triggered.connect(self.act_settings)
-
-    def act_rmsmodel(self):
-        # self.velform = QMainWindow()
-        self.velform = QWidget()
-        self.velform.setWindowTitle('Hist RMS Error')
-        self.velform.setMinimumHeight(600)
-        self.velform.setMinimumWidth(600)
-        self.view_layoutvel = QVBoxLayout()
-        self.tab_graphvel = QTabWidget()
-        self.tab_graphvel.setTabsClosable(True)
-        self.tab_graphvel.tabCloseRequested.connect(self.closeTab)
-
-        # path
-        # -> build upper layout
-        path_layout = QHBoxLayout()
-
-        # -> filled
-        self.line_viewvel = QLineEdit()
-        self.line_viewvel.setPlaceholderText('path of *.reloc')
-        btn_search_viewvel = QPushButton()
-        btn_search_viewvel.setText('...')
-        btn_search_viewvel.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        btn_search_viewvel.clicked.connect(self.btn_search_viewvel_clicked)
-
-        btn_enter_view = QPushButton()
-        btn_enter_view.setText('View!')
-        btn_enter_view.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        btn_enter_view.clicked.connect(self.btn_enter_viewvel_clicked)
-
-        # -> input to layout
-        path_layout.addWidget(self.line_viewvel)
-        path_layout.addWidget(btn_search_viewvel)
-        path_layout.addWidget(btn_enter_view)
-        self.view_layoutvel.addLayout(path_layout)
-        self.view_layoutvel.addWidget(self.tab_graphvel)
-
-        # input layout to widget
-        self.velform.setLayout(self.view_layoutvel)
-        self.velform.show()
 
     # action of bmkg2pha
     def act_bmkg2pha(self):
@@ -809,6 +465,7 @@ class MainWindow(QMainWindow):
         self.form_bmkg2pha = QMainWindow()
         mainwidget = QWidget(self.form_bmkg2pha)
         self.form_bmkg2pha.setWindowTitle('Wizard BMKG buletin to PHA')
+        self.form_bmkg2pha.setWindowIcon(self.icon)
         # self.form_bmkg2pha.setWindowFlag(Qt.WindowStaysOnTopHint)
 
         # build main layout
@@ -895,6 +552,7 @@ class MainWindow(QMainWindow):
         self.form_ph2dt = QMainWindow()
         mainwidget = QWidget(self.form_ph2dt)
         self.form_ph2dt.setWindowTitle('Wizard PHA to DT/SEL')
+        self.form_ph2dt.setWindowIcon(self.icon)
 
         # build main layout
         mainlayout = QVBoxLayout()
@@ -1133,27 +791,27 @@ class MainWindow(QMainWindow):
     def btn_search_station_clicked(self):
         open = QFileDialog()
         filepath = open.getOpenFileName(self, 'Open station.dat', '/', "Format File (*.dat)")
-        self.line_station.setText(filepath[0])
+        self.line_station.setText(filepath)
 
     def btn_search_phase_clicked(self):
         open = QFileDialog()
         filepath = open.getOpenFileName(self, 'Open phase.dat/.pha', '/', "Format File (*.dat *.pha)")
-        self.line_phase.setText(filepath[0])
+        self.line_phase.setText(filepath)
 
     def btn_search_dt_clicked(self):
         open = QFileDialog()
         filepath = open.getSaveFileName(self, 'Save dt.ct', '/', "Format File (*.ct)")
-        self.line_dt.setText(filepath[0])
+        self.line_dt.setText(filepath)
 
     def btn_search_eventsel_clicked(self):
         open = QFileDialog()
         filepath = open.getSaveFileName(self, 'Save event.sel', '/', "Format File (*.sel)")
-        self.line_eventsel.setText(filepath[0])
+        self.line_eventsel.setText(filepath)
 
     def btn_search_eventdat_clicked(self):
         open = QFileDialog()
         filepath = open.getSaveFileName(self, 'Save event.dat', '/', "Format File (*.dat)")
-        self.line_eventdat.setText(filepath[0])
+        self.line_eventdat.setText(filepath)
 
     # action of settings
     def act_settings(self):
@@ -1227,13 +885,13 @@ class MainWindow(QMainWindow):
     def btn_search_hypoDD_clicked(self):
         open = QFileDialog()
         filepath = open.getOpenFileName(self, 'Open hypoDD.exe', 'hypoDD', "Format File (*.exe)")
-        self.line_hypoDD.setText(filepath[0])
+        self.line_hypoDD.setText(filepath)
 
     def btn_search_ph2dt_clicked(self):
         open = QFileDialog()
         filepath = open.getOpenFileName(self, 'Open ph2dt.exe', 'ph2dt', "Format File (*.exe)")
         # self.path_ph2dt = filepath[0]
-        self.line_ph2dt.setText(filepath[0])
+        self.line_ph2dt.setText(filepath)
 
     def btn_engines_ok_clicked(self):
         file = open(self.enginespath, 'w')

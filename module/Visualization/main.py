@@ -4,8 +4,8 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
+from pyface.qt.QtCore import *
+from pyface.qt.QtGui import *
 
 from subroutine.thread.threading import Worker, MessageBox, MessageOpt
 from subroutine.time.tictac import tic, tac
@@ -13,9 +13,9 @@ from module.Visualization.subroutine.pyqtEditable import *
 
 from matplotlib.figure import Figure
 from matplotlib.gridspec import GridSpec
-from matplotlib.backends.backend_qt5agg import \
+from matplotlib.backends.backend_qt4agg import \
     FigureCanvasQTAgg as FigureCanvas
-from matplotlib.backends.backend_qt5agg import \
+from matplotlib.backends.backend_qt4agg import \
     NavigationToolbar2QT as NavigationToolbar
 from mpl_toolkits.mplot3d import Axes3D
 
@@ -80,7 +80,7 @@ class MainWindow(QMainWindow):
         self.main_tab.setTabsClosable(True)
         self.main_tab.tabCloseRequested.connect(self.close_maintab)
         self.main_tab.currentChanged.connect(self.tabChanged)
-        self.main_tab.tabBarClicked.connect(self.tabChanged)
+        # self.main_tab.tabBarClicked.connect(self.tabChanged)
 
         self.setCentralWidget(self.main_tab)
 
@@ -127,12 +127,12 @@ class MainWindow(QMainWindow):
 
     def act_loaddata(self):
         open = QFileDialog()
-        filepath = open.getOpenFileName(self, 'Open seismogram file', '/', "Format File (*.*)")
+        filepath = open.getOpenFileName(self, 'Open seismogram file', '/', "Format File (*.mseed)")
 
-        if filepath[0] != '':
-            self.filepath = filepath[0]
+        if filepath != '':
+            self.filepath = filepath
             # Pass the function to execute
-            worker = Worker(self.act_loaddata_execute,filepath[0])
+            worker = Worker(self.act_loaddata_execute,filepath)
             # worker.signals.result.connect(self.act_loaddata_output)
             worker.signals.error.connect(self.act_loaddata_error)
             worker.signals.finished.connect(self.act_loaddata_complete)

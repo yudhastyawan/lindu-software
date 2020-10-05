@@ -1,3 +1,3 @@
-D:
-cd D:/Programing Project/Python/Lindu V1.0/Engine/
+C:
+cd C:\Users\Yudha Styawan\projects\lind-dev\module\hypoDD\engine
 hypoDD hypoDD.inp

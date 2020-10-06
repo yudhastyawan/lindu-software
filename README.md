@@ -29,26 +29,45 @@ Check your Windows if it has been installed MSVC or not. You can check this page
 The packages that you need to be installed by using PIP:
 ```
 apptools==4.5.0
+basemap==1.2.2
 certifi==2020.6.20
+chardet==3.0.4
+click==7.1.2
 configobj==5.0.6
 cx-Freeze==5.0.2
 cycler==0.10.0
+decorator==4.4.2
+Flask==1.1.2
+future==0.18.2
+geos==0.2.2
+idna==2.10
+itsdangerous==1.1.0
+Jinja2==2.11.2
 kiwisolver==1.2.0
+lxml==4.5.2
+MarkupSafe==1.1.1
 matplotlib==3.3.2
 mayavi==4.5.0+vtk71
 numpy==1.19.2
+obspy==1.2.2
 Pillow==7.2.0
 pyface==5.1.0
 Pygments==2.7.1
 pyparsing==2.4.7
+pyproj==2.6.1.post1
 PyQt4==4.11.4
+pyshp==2.1.2
 python-dateutil==2.8.1
+requests==2.24.0
 scipy==1.5.2
 six==1.15.0
+SQLAlchemy==1.3.19
 traits==4.6.0
 traits-stubs==6.1.0
 traitsui==5.1.0
+urllib3==1.25.10
 VTK==7.1.1
+Werkzeug==1.0.1
 ```
 Or you can use this command recursively:
 `pip install -r requirements_all.txt`

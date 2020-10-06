@@ -12,13 +12,14 @@ from subroutine.plugins import plugins
 import module.Tomography.main as tg
 import module.GAD.main as gad
 import module.hypoDD.main as DD
-import module.Visualization.main as Vis
+import subroutine.styles.main as style
+# import module.Visualization.main as Vis
 from module.Displays import CubedView, Map
 
 class MainWindow(QtGui.QMainWindow):
     def __init__(self, parent = None):
         super(MainWindow, self).__init__(parent)
-
+        self.setStyleSheet(style.style)
         self.threadpool = QtCore.QThreadPool()
         self.information_window()
         self.menubar()
@@ -37,13 +38,12 @@ class MainWindow(QtGui.QMainWindow):
         self.mFile = self.mbar.addMenu('File')
         self.mQuit = self.mFile.addAction('Quit')
         self.mProgram = self.mbar.addMenu('Programs')
-        self.mVis = self.mProgram.addAction('Seismic View (BETA)')
         self.mHypo = self.mProgram.addMenu('Hypocenter')
         self.mLoc = self.mHypo.addAction('Location (GAD Wrapper)')
         self.mReloc = self.mHypo.addMenu('Relocation')
         self.mRelocDD = self.mReloc.addAction('HypoDD Wrapper')
         self.mRelocJHD = self.mReloc.addAction('JHD Wrapper')
-        self.mTomo = self.mProgram.addAction('Traveltime Tomography')
+        self.mTomo = self.mProgram.addAction('Traveltime Tomography (BETA)')
         self.mProject = self.mbar.addMenu('Project')
         self.mProjectEarthTomo = self.mProject.addAction('Earthquake Tomography Project')
         self.mPlug = plugins.Plugins(self.threadpool,self)
@@ -59,7 +59,7 @@ class MainWindow(QtGui.QMainWindow):
         self.mTomo.triggered.connect(self.act_mTomo)
         self.mLoc.triggered.connect(self.act_mLoc)
         self.mRelocDD.triggered.connect(self.act_mRelocDD)
-        self.mVis.triggered.connect(self.act_mVis)
+        # self.mVis.triggered.connect(self.act_mVis)
         self.mQuit.triggered.connect(self.act_mQuit)
 
         # Disable premature function
@@ -73,13 +73,13 @@ class MainWindow(QtGui.QMainWindow):
     def act_mQuit(self):
         self.close()
 
-    def act_mVis(self):
-        tomoDialog = Vis.MainWindow(self)
-        frameGm = tomoDialog.frameGeometry()
-        topLeftPoint = QtGui.QApplication.desktop().availableGeometry().topLeft()
-        frameGm.moveTopLeft(topLeftPoint)
-        tomoDialog.move(frameGm.topLeft())
-        tomoDialog.showMaximized()
+    # def act_mVis(self):
+    #     tomoDialog = Vis.MainWindow(self)
+    #     frameGm = tomoDialog.frameGeometry()
+    #     topLeftPoint = QtGui.QApplication.desktop().availableGeometry().topLeft()
+    #     frameGm.moveTopLeft(topLeftPoint)
+    #     tomoDialog.move(frameGm.topLeft())
+    #     tomoDialog.showMaximized()
 
     def act_mRelocDD(self):
         tomoDialog = DD.MainWindow(self)

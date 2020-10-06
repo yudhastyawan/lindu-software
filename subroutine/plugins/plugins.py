@@ -3,10 +3,12 @@ from pyface.qt import QtGui, QtCore
 import importlib
 from subroutine.thread.threading2 import *
 import subprocess
+import subroutine.styles.main as style
 
 class Plugins(QtGui.QMenu):
     def __init__(self,threadpool,parent=None):
         QtGui.QMenu.__init__(self)
+        self.setStyleSheet(style.style)
         self.plugMen = []
         self.plugFolds = os.listdir(os.path.join(os.getcwd(),'plugins'))
         self.threadpool = threadpool

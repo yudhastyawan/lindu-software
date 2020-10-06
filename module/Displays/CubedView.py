@@ -61,7 +61,9 @@ class SetView(QtGui.QMainWindow):
         # btn_search_log.setSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
         btn_search_log.clicked.connect(self.btn_search_log_clicked)
 
-        btn_enter_view = QtGui.QPushButton()
+        btn_enter_view = QtGui.QCommandLinkButton()
+        icon = QtGui.QIcon(os.path.join(os.getcwd(),'subroutine','icon','Icon_Files','view.ico'))
+        btn_enter_view.setIcon(icon)
         btn_enter_view.setText('View!')
         btn_enter_view.setSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
         btn_enter_view.clicked.connect(self.btn_enter_view_clicked)
@@ -295,6 +297,14 @@ class MainView(QtGui.QMainWindow):
         self.vbl = QtGui.QVBoxLayout(self.main_widget)
 
         view_button = QtGui.QPushButton()
+        icon = QtGui.QIcon(os.path.join(os.getcwd(),'subroutine','icon','Icon_Files','FIX','import.ico'))
+        view_button.setIcon(icon)
+        # setting background color to push button when mouse hover over it
+        view_button.setStyleSheet("QPushButton::hover"
+                                 "{"
+                                 "background-color : red;"
+                                 "color : white;"
+                                 "}")
         view_button.setText('View Scene')
         view_button.clicked.connect(self.view_click)
         view_button.setSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)

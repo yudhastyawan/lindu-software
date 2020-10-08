@@ -159,5 +159,9 @@ If you will use this software, please add these references to your research:
 	<img src="/imgs/lindu-dev-3.PNG" alt="Lindu Development" width="800"/>
 	<br>
 	Lindu Progress (2020-10-06)
+	<br>
+	<img src="/imgs/lindu-dev-4.png" alt="Lindu Development" width="800"/>
+	<br>
+	Lindu Progress (2020-10-08)
 	<br>	
 </p>

@@ -148,6 +148,15 @@ If you will use this software, please add these references to your research:
 }
 ```
 
+# CHANGELOG
+for creating the similar CHANGELOG, this is the format that is used in PowerShell:
+
+```shell script
+function changelog {
+	echo "# CHANGELOG`n`n" > CHANGELOG.md
+	git log --all --abbrev-commit --decorate --format=format:'- %C(bold cyan)%aD%C(reset) %C(white)%s%C(reset) %C(dim white)(%C(bold blue)%h%C(reset))' >> CHANGELOG.md
+```
+
 # Galleries
 <p align="center">
 	<img src="/lindugui/images/screenshots/lindu-dev-1.PNG" alt="Lindu Development" width="800"/>

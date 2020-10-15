@@ -1,3 +1,4 @@
+from lindugui import LMainWindow
 import os
 from pyface.qt.QtCore import *
 from pyface.qt.QtGui import *
@@ -15,39 +16,22 @@ from matplotlib.backends.backend_qt4agg import \
     NavigationToolbar2QT as NavigationToolbar
 from mpl_toolkits.mplot3d import Axes3D
 
-class MainWindow(QMainWindow):
+class MainWindow(LMainWindow):
     def __init__(self, parent = None):
         super(MainWindow, self).__init__(parent)
         self.setWindowTitle('Seismo View (BETA)')
-        self.icon = QIcon(os.path.join(os.getcwd(),'subroutine','icon','Icon_Files','FIX','LOGO.ico'))
-        self.setWindowIcon(self.icon)
-        self.threadpool = QThreadPool()
-        self.information_window()
         self.menubar()
         self.mainWidget()
         self.setCentralWidget(self.mainWin)
         self.showMaximized()
 
-    def information_window(self):
-        self.name_program = "Seismo View"
-        self.setWindowTitle(self.name_program)
-        self.icon = QIcon(os.path.join(os.getcwd(), 'subroutine', 'icon', 'Icon_Files', 'FIX', 'LOGO.ico'))
-        self.setWindowIcon(self.icon)
-
     def menubar(self):
-        self.mbar = self.menuBar()
-        self.mFile = self.mbar.addMenu('File')
         self.mOpen = self.mFile.addAction('Open')
-        self.mQuit = self.mFile.addAction('Quit')
         self.mHelp = self.mbar.addMenu('Help')
 
-        self.mQuit.triggered.connect(self.act_mQuit)
         self.mOpen.triggered.connect(self.act_mOpen)
 
         self.mHelp.setDisabled(True)
-
-    def act_mQuit(self):
-        self.close()
 
     def mainWidget(self):
         self.mainWin = QWidget()
@@ -91,16 +75,15 @@ class MainWindow(QMainWindow):
             widget.setWindowFlags(Qt.Window)
             widget.show()
 
-class MainView(QMainWindow):
+class MainView(LMainWindow):
     popOut = Signal(QWidget)
     popIn = Signal(QWidget)
     def __init__(self, open_file, parent=None):
-        QMainWindow.__init__(self, parent)
-        mBar = self.menuBar()
-        mWindow = mBar.addMenu("Window")
+        LMainWindow.__init__(self, parent)
+        mWindow = self.mbar.addMenu("Window")
         mPopOut = mWindow.addAction("Pop Out")
         mPopIn = mWindow.addAction("Pop In")
-        mOptions = mBar.addMenu("Options")
+        mOptions = self.mbar.addMenu("Options")
         self.mSingle = mOptions.addAction("Single Selection")
         self.mMultiple = mOptions.addAction("Multi Selection")
         self.mDeselect = mOptions.addAction("Deselect All")
@@ -177,7 +160,7 @@ class MainView(QMainWindow):
         for currentQTableWidgetItem in self.tbl_info.selectedItems():
             indexes.add(currentQTableWidgetItem.row())
         indexes = list(indexes)
-        MplWindow = QMainWindow(self)
+        MplWindow = LMainWindow(self)
         MplWindow.setWindowTitle('plot - Seismo View')
         MplWid = QWidget()
         MplWindow.setCentralWidget(MplWid)

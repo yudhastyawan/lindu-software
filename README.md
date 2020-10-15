@@ -1,6 +1,6 @@
 # The Developer Branch of Lindu Software
 <p align="center">
-	<img src="/imgs/lindu-logo.png" alt="Lindu Logo" width="200"/>
+	<img src="/lindugui/images/screenshots/lindu-logo.png" alt="Lindu Logo" width="200"/>
 	<br>
 	Lindu Software Logo
 	<br>
@@ -26,7 +26,9 @@ Check your Windows if it has been installed MSVC or not. You can check this page
 [https://visualstudio.microsoft.com/visual-cpp-build-tools/](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
 
 ## 4. Install the requirement.txt
-The packages that you need to be installed by using PIP:
+*Caution: Didn't try it yet*
+
+The packages that you need to be installed:
 ```
 apptools==4.5.0
 basemap==1.2.2
@@ -77,7 +79,7 @@ Or you can use this command recursively:
 
 Download basemap wheel in [https://www.lfd.uci.edu/~gohlke/pythonlibs/#basemap](https://www.lfd.uci.edu/~gohlke/pythonlibs/#basemap)
 and install to your environment:
-`pip install basemap-1.2.2-cp38-cp38-win_amd64.whl`
+`pip install basemap-1.2.2-cp36-cp36-win_amd64.whl`
 
 ## 6. Check the compatibility of Windows version
 *Caution: Didn't try it yet*
@@ -148,19 +150,19 @@ If you will use this software, please add these references to your research:
 
 # Galleries
 <p align="center">
-	<img src="/imgs/lindu-dev-1.PNG" alt="Lindu Development" width="800"/>
+	<img src="/lindugui/images/screenshots/lindu-dev-1.PNG" alt="Lindu Development" width="800"/>
 	<br>
 	Lindu Progress (2020-10-05)
 	<br>
-	<img src="/imgs/lindu-dev-2.PNG" alt="Lindu Development" width="800"/>
+	<img src="/lindugui/images/screenshots/lindu-dev-2.PNG" alt="Lindu Development" width="800"/>
 	<br>
 	Lindu Progress (2020-10-06)
 	<br>
-	<img src="/imgs/lindu-dev-3.PNG" alt="Lindu Development" width="800"/>
+	<img src="/lindugui/images/screenshots/lindu-dev-3.PNG" alt="Lindu Development" width="800"/>
 	<br>
 	Lindu Progress (2020-10-06)
 	<br>
-	<img src="/imgs/lindu-dev-4.png" alt="Lindu Development" width="800"/>
+	<img src="/lindugui/images/screenshots/lindu-dev-4.png" alt="Lindu Development" width="800"/>
 	<br>
 	Lindu Progress (2020-10-08)
 	<br>	

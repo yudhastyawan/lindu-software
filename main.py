@@ -1,85 +1,41 @@
-import sys
-import os
-os.environ['ETS_TOOLKIT'] = 'qt4'
-os.environ['QT_API'] = 'pyqt'
-from pyface.qt import QtGui, QtCore
-import time
-import vtk
-from copy import deepcopy as copy
+from lindugui import *
 
-from subroutine.icon.Icon import *
-from subroutine.plugins import plugins
-import module.Tomography.main as tg
-import module.GAD.main as gad
-import module.hypoDD.main as DD
-import subroutine.styles.main as style
-# import module.Visualization.main as Vis
-from module.Displays import CubedView, Map
+from lindugui.settings.icon import *
+from lindugui.settings import plugins
+import modules.Tomography.main as tg
+import modules.GAD.main as gad
+import modules.hypoDD.main as DD
+from modules.Displays import CubedView, Map
 
-class MainWindow(QtGui.QMainWindow):
+class MainWindow(LMainWindow):
     def __init__(self, parent = None):
         super(MainWindow, self).__init__(parent)
-        self.setStyleSheet(style.style)
-        self.threadpool = QtCore.QThreadPool()
-        self.information_window()
         self.menubar()
         self.mainWidget()
         self.setCentralWidget(self.mainWin)
-
-    def information_window(self):
-        self.name_program = "Lindu Software ver. 0.1.0"
-        self.setWindowTitle(self.name_program)
-        self.icon = QtGui.QIcon(icon_window)
-        self.setWindowIcon(self.icon)
+        self.setWindowTitle("Lindu Software")
 
     # create menubar
     def menubar(self):
-        self.mbar = self.menuBar()
-        self.mFile = self.mbar.addMenu('File')
-        self.mQuit = self.mFile.addAction('Quit')
-        self.mProgram = self.mbar.addMenu('Programs')
-        self.mHypo = self.mProgram.addMenu('Hypocenter')
-        self.mLoc = self.mHypo.addAction('Location (GAD Wrapper)')
-        self.mReloc = self.mHypo.addMenu('Relocation')
-        self.mRelocDD = self.mReloc.addAction('HypoDD Wrapper')
-        self.mRelocJHD = self.mReloc.addAction('JHD Wrapper')
-        self.mTomo = self.mProgram.addAction('Traveltime Tomography (BETA)')
-        self.mProject = self.mbar.addMenu('Project')
-        self.mProjectEarthTomo = self.mProject.addAction('Earthquake Tomography Project')
+        self.mProgram = LMenu.addMenu('Program',self.mbar)
+        self.mHypo = LMenu.addMenu('Hypocenter',self.mProgram)
+        self.mLoc = LMenu.addAction('Location (GAD Wrapper)',self.mHypo,triggered=self.act_mLoc)
+        self.mReloc = LMenu.addMenu('Relocation',self.mHypo)
+        self.mRelocDD = LMenu.addAction('HypoDD Wrapper',self.mReloc,triggered=self.act_mRelocDD)
+        self.mRelocJHD = LMenu.addAction('JHD Wrapper',self.mReloc,disabled=True)
+        self.mTomo = LMenu.addAction('Traveltime Tomography (BETA)',self.mProgram,triggered=self.act_mTomo)
+        self.mProject = LMenu.addMenu('Project',self.mbar,disabled=True)
+        self.mProjectEarthTomo = LMenu.addAction('Earthquake Tomography Project',self.mProject)
+        # ====================
         self.mPlug = plugins.Plugins(self.threadpool,self)
         self.mbar.addAction(self.mPlug.menuAction())
         self.mPlug.setTitle('Plugins')
-        self.mHelp = self.mbar.addMenu('Help')
-        self.mAbout = self.mHelp.addAction('About')
-        self.mDoc = self.mHelp.addAction('Documentation')
+        # ====================
+        self.mHelp = LMenu.addMenu('Help',self.mbar)
+        self.mAbout = LMenu.addAction('About',self.mHelp,disabled=True)
+        self.mDoc = LMenu.addAction('Documentation',self.mHelp,disabled=True)
         self.mHelp.addSeparator()
-        self.mDev = self.mHelp.addAction('Login as The Developer')
-
-        # add signal and slot to menubar
-        self.mTomo.triggered.connect(self.act_mTomo)
-        self.mLoc.triggered.connect(self.act_mLoc)
-        self.mRelocDD.triggered.connect(self.act_mRelocDD)
-        # self.mVis.triggered.connect(self.act_mVis)
-        self.mQuit.triggered.connect(self.act_mQuit)
-
-        # Disable premature function
-        self.mProject.setDisabled(True)
-        self.mHelp.setDisabled(True)
-        self.mAbout.setDisabled(True)
-        self.mDoc.setDisabled(True)
-        self.mDev.setDisabled(True)
-        self.mRelocJHD.setDisabled(True)
-
-    def act_mQuit(self):
-        self.close()
-
-    # def act_mVis(self):
-    #     tomoDialog = Vis.MainWindow(self)
-    #     frameGm = tomoDialog.frameGeometry()
-    #     topLeftPoint = QtGui.QApplication.desktop().availableGeometry().topLeft()
-    #     frameGm.moveTopLeft(topLeftPoint)
-    #     tomoDialog.move(frameGm.topLeft())
-    #     tomoDialog.showMaximized()
+        self.mDev = LMenu.addAction('Login as The Developer',self.mHelp,disabled=True)
 
     def act_mRelocDD(self):
         tomoDialog = DD.MainWindow(self)
@@ -164,7 +120,7 @@ class MainWindow(QtGui.QMainWindow):
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
     main = MainWindow()
-    splash_pix = QtGui.QPixmap(splash_screen)
+    splash_pix = QtGui.QPixmap(icon.splash_screen)
     splash = QtGui.QSplashScreen(splash_pix, QtCore.Qt.WindowStaysOnTopHint)
     splash.show()
     time.sleep(1)

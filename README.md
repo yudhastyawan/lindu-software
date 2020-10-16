@@ -9,6 +9,8 @@ Progress of Lindu Software Codes (for seismological data processing: determining
 
 This is the development branch for the future release.
 
+See the [changelog file](https://github.com/comp-geoph-itera/lindu-software/blob/dev/CHANGELOG.md)
+
 # Developer
 If you would like to be the collaborator of this software, you could use these several steps for making your own environment in Lindu software repository.
 
@@ -72,7 +74,12 @@ VTK==7.1.1
 Werkzeug==1.0.1
 ```
 Or you can use this command recursively:
-`pip install -r requirements_all.txt`
+
+~~pip install -r requirements_all.txt~~
+
+**Update:**
+
+You need to install PyQt4 manually by download on [www.lfd.uci.edu](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyqt4)
 
 ## 5. Install Basemap Toolkit
 *Caution: Didn't try it yet*

@@ -2,7 +2,7 @@ import sys
 import time
 from pyface.qt import QtGui, QtCore
 
-from subroutine.icon.Icon import *
+from lindugui.settings.icon import *
 
 # import module.Tomography.submodule.analyze2D.submodule.createvel2d as cv2d
 import modules.Tomography.submodule.analyze2D.submodule.fwdmodel as fwd

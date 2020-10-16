@@ -7,8 +7,8 @@ import modules.Tomography.submodule.analyze2D.submodule.subroutine.actCrtModel a
 import modules.Tomography.submodule.analyze2D.submodule.subroutine.display as disp
 import modules.Tomography.submodule.analyze2D.submodule.subroutine.displayVel as dispV
 
-from subroutine.thread.threading import Worker, MessageBox
-from subroutine.time.tictac import tic, tac
+from lindugui.settings.threading import Worker, MessageBox
+from lindugui.settings.tictac import tic, tac
 
 class MainWindow(QMainWindow):
     def __init__(self, parent = None):

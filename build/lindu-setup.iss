@@ -27,11 +27,11 @@ LicenseFile=C:\Users\Yudha Styawan\projects\lind-dev\LICENSE.md
 ;PrivilegesRequired=lowest
 OutputDir=C:\Users\Yudha Styawan\projects\lind-dev\build
 OutputBaseFilename=Lindu-setup
-SetupIconFile=C:\Users\Yudha Styawan\projects\lind-dev\subroutine\icon\Icon_Files\FIX\LOGO.ico
+SetupIconFile=C:\Users\Yudha Styawan\projects\lind-dev\lindugui\images\icon\main_logo.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
-WizardSmallImageFile=C:\Users\Yudha Styawan\projects\lind-dev\subroutine\icon\Icon_Files\FIX\LOGO.bmp
+WizardSmallImageFile=C:\Users\Yudha Styawan\projects\lind-dev\lindugui\images\icon\main_logo.bmp
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"

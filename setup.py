@@ -48,7 +48,7 @@ build_exe_options = {"packages": ["pyface.ui.qt4", "tvtk.vtk_module", "tvtk.pyfa
 
 executables = [
     Executable('main.py', targetName="LindSoft.exe",base = "Win32GUI",
-               icon=os.path.join(os.getcwd(),'subroutine/icon/Icon_Files/FIX/LOGO.ico'),)
+               icon=os.path.join(os.getcwd(),'lindugui/images/icon/main_logo.ico'),)
 ]
 
 setup(name='Lindu Software',

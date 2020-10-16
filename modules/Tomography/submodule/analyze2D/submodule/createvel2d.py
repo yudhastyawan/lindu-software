@@ -14,8 +14,8 @@ from matplotlib.backends.backend_qt5agg import \
 from matplotlib.backends.backend_qt5agg import \
     NavigationToolbar2QT as NavigationToolbar
 from mpl_toolkits.mplot3d import Axes3D
-from subroutine.thread.threading import Worker, MessageBox, MessageOpt
-from subroutine.time.tictac import tic, tac
+from lindugui.settings.threading import Worker, MessageBox, MessageOpt
+from lindugui.settings.tictac import tic, tac
 from modules.Tomography.submodule.analyze2D.submodule.submodule.tabCreateModel import mainModelDisplay
 
 class CreatePicNum(FigureCanvas):

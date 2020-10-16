@@ -7,7 +7,6 @@ import numpy as np
 
 from modules.Tomography.subroutine.tomo_inverse import inversion, inversionS, inversion_test, inversion_testS
 from modules.Tomography.subroutine.tomo_log import tomo_log, read_log
-from subroutine.icon.Icon import icon_tomo
 import modules.Tomography.subroutine.hypoDD2tomofile as ht
 # import module.Tomography.submodule.analyze2D.main as an2d
 
@@ -960,7 +959,7 @@ class MainWindow(LMainWindow):
 
     def act_analyze2d(self):
         icon_tab_tg = QtGui.QIcon()
-        icon_tab_tg.addPixmap(QtGui.QPixmap(icon_tomo), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        # icon_tab_tg.addPixmap(QtGui.QPixmap(icon_tomo), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         # tab_analyze2d = an2d.MainWindow()
         # tab_analyze2d.show()
         # self.maintab.addTab(tab_analyze2d, icon_tab_tg, "2D Analyze")

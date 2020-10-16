@@ -28,7 +28,6 @@ build_exe_options = {"packages": ["pyface.ui.qt4", "tvtk.vtk_module", "tvtk.pyfa
                     (matplotlib.get_data_path(), "mpl-data"),
                                        os.path.join(PYTHON_INSTALL_DIR, 'DLLs', 'tk86t.dll'),
                                        os.path.join(PYTHON_INSTALL_DIR, 'DLLs', 'tcl86t.dll'),
-                                       os.path.join(os.getcwd(),'subroutine/'),
                                        os.path.join(os.getcwd(), 'modules/'),
                                        os.path.join(os.getcwd(),'bug/'),
                                        os.path.join(os.getcwd(),'plugins/'),

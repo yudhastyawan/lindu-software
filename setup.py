@@ -51,7 +51,7 @@ executables = [
 ]
 
 setup(name='Lindu Software',
-      version='0.1.0',
+      version='0.1.0_alpha.1',
       description='Open-Source software for seismological data processing: determining and relocating hypocenter; traveltime tomography',
       options = {"build_exe": build_exe_options},
       executables=executables,

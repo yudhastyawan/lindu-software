@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Lindu Software"
-#define MyAppVersion "0.1.0"
+#define MyAppVersion "0.1.0_alpha.1"
 #define MyAppPublisher "Computational Geophysics - Institut Teknologi Sumatera"
 #define MyAppURL "https://github.com/comp-geoph-itera/lindu-software"
 #define MyAppExeName "LindSoft.exe"

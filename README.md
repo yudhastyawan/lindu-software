@@ -29,8 +29,10 @@ Check your Windows if it has been installed MSVC or not. You can check this page
 
 
 ## 7. Build a package
-`pip install --upgrade build`
-`python -m build`
+```bash
+pip install --upgrade build
+python -m build
+```
 
 # References
 If you will use this software, please add these references to your research:

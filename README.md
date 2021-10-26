@@ -7,7 +7,7 @@
 </p>
 Progress of Lindu Software Codes (for seismological data processing: determining and relocating hypocenter; traveltime tomography)
 
-This is the development branch for the future release.
+This is the package branch for the future release.
 
 See the [changelog file](https://github.com/comp-geoph-itera/lindu-software/blob/dev/CHANGELOG.md)
 
@@ -15,7 +15,7 @@ See the [changelog file](https://github.com/comp-geoph-itera/lindu-software/blob
 If you would like to be the collaborator of this software, you could use these several steps for making your own environment in Lindu software repository.
 
 ## 1. Python version
-we use python 3.6.12 version. However, you can create `conda` environment based on this version if you are using Anaconda or Miniconda. After that, you can clone the repository into your local disk. `git clone git@github.com:comp-geoph-itera/lindu-software.git`.
+we use python 3.9 version. However, you can create `conda` environment based on this version if you are using Anaconda or Miniconda. After that, you can clone the repository into your local disk. `git clone git@github.com:comp-geoph-itera/lindu-software.git`.
 
 ## 2. Create Python environment
 after you clone this repository, go to `lindu software` directory and then create `.venv` by commanding
@@ -27,72 +27,10 @@ then activate it
 Check your Windows if it has been installed MSVC or not. You can check this page:
 [https://visualstudio.microsoft.com/visual-cpp-build-tools/](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
 
-## 4. Install the requirement.txt
-*Caution: Didn't try it yet*
 
-The packages that you need to be installed:
-```
-apptools==4.5.0
-basemap==1.2.2
-certifi==2020.6.20
-chardet==3.0.4
-click==7.1.2
-configobj==5.0.6
-cx-Freeze==5.0.2
-cycler==0.10.0
-decorator==4.4.2
-Flask==1.1.2
-future==0.18.2
-geos==0.2.2
-idna==2.10
-itsdangerous==1.1.0
-Jinja2==2.11.2
-kiwisolver==1.2.0
-lxml==4.5.2
-MarkupSafe==1.1.1
-matplotlib==3.3.2
-mayavi==4.5.0+vtk71
-numpy==1.19.2
-obspy==1.2.2
-Pillow==7.2.0
-pyface==5.1.0
-Pygments==2.7.1
-pyparsing==2.4.7
-pyproj==2.6.1.post1
-PyQt4==4.11.4
-pyshp==2.1.2
-python-dateutil==2.8.1
-requests==2.24.0
-scipy==1.5.2
-six==1.15.0
-SQLAlchemy==1.3.19
-traits==4.6.0
-traits-stubs==6.1.0
-traitsui==5.1.0
-urllib3==1.25.10
-VTK==7.1.1
-Werkzeug==1.0.1
-```
-Or you can use this command recursively:
-
-~~pip install -r requirements_all.txt~~
-
-**Update:**
-
-You need to install PyQt4 manually by download on [www.lfd.uci.edu](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyqt4)
-
-## 5. Install Basemap Toolkit
-*Caution: Didn't try it yet*
-
-Download basemap wheel in [https://www.lfd.uci.edu/~gohlke/pythonlibs/#basemap](https://www.lfd.uci.edu/~gohlke/pythonlibs/#basemap)
-and install to your environment:
-`pip install basemap-1.2.2-cp36-cp36-win_amd64.whl`
-
-## 6. Check the compatibility of Windows version
-*Caution: Didn't try it yet*
-
-## 7. Build an .exe program
-`python setup.py build`
+## 7. Build a package
+`pip install --upgrade build`
+`python -m build`
 
 # References
 If you will use this software, please add these references to your research:
@@ -164,23 +102,3 @@ function changelog {
 	git log --all --abbrev-commit --decorate --format=format:'- %C(bold cyan)%aD%C(reset) %C(white)%s%C(reset) %C(dim white)([%C(bold blue)%h%C(reset)](https://github.com/comp-geoph-itera/lindu-software/commit/%C(bold blue)%H%C(reset)))' >> CHANGELOG.md
 }
 ```
-
-# Galleries
-<p align="center">
-	<img src="/lindugui/images/screenshots/lindu-dev-1.PNG" alt="Lindu Development" width="800"/>
-	<br>
-	Lindu Progress (2020-10-05)
-	<br>
-	<img src="/lindugui/images/screenshots/lindu-dev-2.PNG" alt="Lindu Development" width="800"/>
-	<br>
-	Lindu Progress (2020-10-06)
-	<br>
-	<img src="/lindugui/images/screenshots/lindu-dev-3.PNG" alt="Lindu Development" width="800"/>
-	<br>
-	Lindu Progress (2020-10-06)
-	<br>
-	<img src="/lindugui/images/screenshots/lindu-dev-4.png" alt="Lindu Development" width="800"/>
-	<br>
-	Lindu Progress (2020-10-08)
-	<br>	
-</p>

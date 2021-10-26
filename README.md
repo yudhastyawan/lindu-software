@@ -1,6 +1,6 @@
 # The Developer Branch of Lindu Software
 <p align="center">
-	<img src="/src/lindu/Widgets/images/screenshots/lindu-logo.png" alt="Lindu Logo" width="200"/>
+	<img src="/src/lindu/Widgets/Images/screenshots/lindu-logo.png" alt="Lindu Logo" width="200"/>
 	<br>
 	Lindu Software Logo
 	<br>

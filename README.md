@@ -29,17 +29,17 @@ pip install lindu
 # Python version
 The minimum version is 3.8.
 
+# How to Use
+```python
+import lindu
+lindu.run()
+```
+
 # Build a package
 In the parent repository, type these commands:
 ```bash
 pip install --upgrade build
 python -m build
-```
-
-# How to Use
-```python
-import lindu
-lindu.run()
 ```
 
 # References

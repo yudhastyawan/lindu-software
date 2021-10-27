@@ -18,7 +18,7 @@ This is the package branch for the future release.
 See the [changelog file](https://github.com/comp-geoph-itera/lindu-software/blob/package/CHANGELOG.md)
 
 # Developer
-If you would like to be the collaborator of this software, you could use these several steps for making your own environment in Lindu software repository.
+If you would like to be the collaborator, feel free to pull request.
 
 # Installation
 Now, pip can be used for installing Lindu.

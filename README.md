@@ -1,4 +1,6 @@
-# The Developer Branch of Lindu Software
+# The Package Branch of Lindu Software
+[![PyPI version](https://badge.fury.io/py/lindu.svg)](https://badge.fury.io/py/lindu)
+
 <p align="center">
 	<img src="https://github.com/comp-geoph-itera/lindu-software/blob/package/src/lindu/Widgets/Images/screenshots/lindu-logo.png" alt="Lindu Logo" width="200"/>
 	<br>
@@ -9,10 +11,16 @@ Progress of Lindu Software Codes (for seismological data processing: determining
 
 This is the package branch for the future release.
 
-See the [changelog file](https://github.com/comp-geoph-itera/lindu-software/blob/dev/CHANGELOG.md)
+See the [changelog file](https://github.com/comp-geoph-itera/lindu-software/blob/package/CHANGELOG.md)
 
 # Developer
 If you would like to be the collaborator of this software, you could use these several steps for making your own environment in Lindu software repository.
+
+# Installation
+Now, pip can be used for installing Lindu.
+```bash
+pip install lindu
+```
 
 ## 1. Python version
 we use python 3.9 version. However, you can create `conda` environment based on this version if you are using Anaconda or Miniconda. After that, you can clone the repository into your local disk. `git clone git@github.com:comp-geoph-itera/lindu-software.git`.
@@ -98,16 +106,6 @@ If you will use this software, please add these references to your research:
 	year = {2019},
 	note = {Publisher: IOP Publishing},
 	pages = {012021}
-}
-```
-
-# CHANGELOG
-for creating the similar CHANGELOG, this is the format that is used in PowerShell:
-
-```shell script
-function changelog {
-	echo "# CHANGELOG`n`n" > CHANGELOG.md
-	git log --all --abbrev-commit --decorate --format=format:'- %C(bold cyan)%aD%C(reset) %C(white)%s%C(reset) %C(dim white)([%C(bold blue)%h%C(reset)](https://github.com/comp-geoph-itera/lindu-software/commit/%C(bold blue)%H%C(reset)))' >> CHANGELOG.md
 }
 ```
 

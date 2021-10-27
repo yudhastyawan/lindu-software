@@ -27,20 +27,10 @@ pip install lindu
 ```
 
 ## 1. Python version
-we use python 3.9 version. However, you can create `conda` environment based on this version if you are using Anaconda or Miniconda. After that, you can clone the repository into your local disk. `git clone git@github.com:comp-geoph-itera/lindu-software.git`.
-
-## 2. Create Python environment
-after you clone this repository, go to `lindu software` directory and then create `.venv` by commanding
-`python -m venv .venv`
-then activate it
-`.venv/Scripts/activate`
-
-## 3. Microsoft Visual C++ 14.0 or more
-Check your Windows if it has been installed MSVC or not. You can check this page:
-[https://visualstudio.microsoft.com/visual-cpp-build-tools/](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
-
+The minimum version is 3.8.
 
 ## 4. Build a package
+In the parent repository, type these commands:
 ```bash
 pip install --upgrade build
 python -m build

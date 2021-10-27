@@ -1,6 +1,6 @@
 # The Developer Branch of Lindu Software
 <p align="center">
-	<img src="/src/lindu/Widgets/Images/screenshots/lindu-logo.png" alt="Lindu Logo" width="200"/>
+	<img src="https://github.com/comp-geoph-itera/lindu-software/blob/package/src/lindu/Widgets/Images/screenshots/lindu-logo.png" alt="Lindu Logo" width="200"/>
 	<br>
 	Lindu Software Logo
 	<br>
@@ -28,10 +28,16 @@ Check your Windows if it has been installed MSVC or not. You can check this page
 [https://visualstudio.microsoft.com/visual-cpp-build-tools/](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
 
 
-## 7. Build a package
+## 4. Build a package
 ```bash
 pip install --upgrade build
 python -m build
+```
+
+## 5. How to Use
+```python
+import lindu
+lindu.run()
 ```
 
 # References
@@ -104,3 +110,11 @@ function changelog {
 	git log --all --abbrev-commit --decorate --format=format:'- %C(bold cyan)%aD%C(reset) %C(white)%s%C(reset) %C(dim white)([%C(bold blue)%h%C(reset)](https://github.com/comp-geoph-itera/lindu-software/commit/%C(bold blue)%H%C(reset)))' >> CHANGELOG.md
 }
 ```
+
+# Galleries
+<p align="center">
+	<img src="https://github.com/comp-geoph-itera/lindu-software/blob/package/src/lindu/Widgets/Images/screenshots/lindu-dev-5.PNG" alt="Lindu Development" width="800"/>
+	<br>
+	Lindu Progress (2021-10-27)
+	<br>	
+</p>

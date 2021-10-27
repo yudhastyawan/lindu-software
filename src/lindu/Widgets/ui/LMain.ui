@@ -15,21 +15,33 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
-    <property name="spacing">
-     <number>0</number>
-    </property>
-    <property name="leftMargin">
-     <number>0</number>
-    </property>
-    <property name="topMargin">
-     <number>0</number>
-    </property>
-    <property name="rightMargin">
-     <number>0</number>
-    </property>
-    <property name="bottomMargin">
-     <number>0</number>
-    </property>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QCheckBox" name="prog_check">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
     <item>
      <widget class="QTreeWidget" name="lindu_tree">
       <property name="sizePolicy">
@@ -69,6 +81,9 @@
         <property name="text">
          <string>Traveltime Tomography (BETA)</string>
         </property>
+        <property name="flags">
+         <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
         <item>
          <property name="text">
           <string>2D</string>
@@ -84,14 +99,23 @@
         <property name="text">
          <string>Earthquakes</string>
         </property>
+        <property name="flags">
+         <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
         <item>
          <property name="text">
           <string>Locate</string>
+         </property>
+         <property name="flags">
+          <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
          </property>
         </item>
         <item>
          <property name="text">
           <string>Relocate</string>
+         </property>
+         <property name="flags">
+          <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
          </property>
         </item>
        </item>
@@ -110,15 +134,29 @@
         <property name="text">
          <string>Map</string>
         </property>
+        <property name="flags">
+         <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Seismo View</string>
+        </property>
        </item>
        <item>
         <property name="text">
          <string>View</string>
         </property>
+        <property name="flags">
+         <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
+        </property>
        </item>
        <item>
         <property name="text">
          <string>Plot</string>
+        </property>
+        <property name="flags">
+         <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
         </property>
        </item>
       </item>
@@ -133,14 +171,8 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>-1</number>
       </property>
-      <widget class="QWidget" name="tomo_2d">
-       <layout class="QVBoxLayout" name="verticalLayout"/>
-      </widget>
-      <widget class="QWidget" name="tomo_3d">
-       <layout class="QVBoxLayout" name="verticalLayout_2"/>
-      </widget>
      </widget>
     </item>
    </layout>
@@ -161,17 +193,26 @@
     <addaction name="action_quit"/>
    </widget>
    <widget class="QMenu" name="menuPrograms">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="title">
      <string>Programs</string>
     </property>
     <addaction name="action_tomography"/>
    </widget>
    <widget class="QMenu" name="menuProject">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="title">
      <string>Project</string>
     </property>
    </widget>
    <widget class="QMenu" name="menuPlugin">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="title">
      <string>Plugin</string>
     </property>

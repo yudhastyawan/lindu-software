@@ -2,11 +2,12 @@
 import os
 from pathlib import Path
 import sys
+import webbrowser
 
 from PySide2.QtWidgets import QApplication, QDialog, QHBoxLayout
 from PySide2.QtCore import QFile
 from PySide2.QtUiTools import QUiLoader
-from PySide2.QtGui import QPixmap
+from PySide2.QtGui import QPixmap, Qt
 
 from lindu.Widgets.Settings.LStyle import LStyle
 
@@ -14,6 +15,8 @@ class About(QDialog):
     def __init__(self, parent = None):
         super(About, self).__init__(parent)
         self.setWindowTitle("About Lindu")
+        self.setWindowFlag(Qt.WindowContextHelpButtonHint, False)
+        self.setFixedSize(750, 573)
         self.load_ui()
         self.settings()
 
@@ -38,3 +41,5 @@ class About(QDialog):
     def settings(self):
         img_path = Path(__file__).resolve().parent.parent.parent
         self.ui.label_screen.setPixmap(QPixmap(os.path.join(img_path, "Images/larges/spl_scr.png")))
+        self.ui.githubButton.clicked.connect(lambda: webbrowser.open("https://github.com/comp-geoph-itera/lindu-software/tree/package"))
+        self.ui.docButton.clicked.connect(lambda: webbrowser.open("https://github.com/comp-geoph-itera/lindu-software/tree/package"))

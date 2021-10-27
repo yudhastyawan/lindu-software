@@ -1,5 +1,9 @@
 # The Package Branch of Lindu Software
 [![PyPI version](https://badge.fury.io/py/lindu.svg)](https://badge.fury.io/py/lindu)
+[![GitHub issues](https://img.shields.io/github/issues/comp-geoph-itera/lindu-software)](https://github.com/comp-geoph-itera/lindu-software/issues)
+[![GitHub forks](https://img.shields.io/github/forks/comp-geoph-itera/lindu-software)](https://github.com/comp-geoph-itera/lindu-software/network)
+[![GitHub stars](https://img.shields.io/github/stars/comp-geoph-itera/lindu-software)](https://github.com/comp-geoph-itera/lindu-software/stargazers)
+[![GitHub license](https://img.shields.io/github/license/comp-geoph-itera/lindu-software)](https://github.com/comp-geoph-itera/lindu-software/blob/dev/LICENSE.md)
 
 <p align="center">
 	<img src="https://github.com/comp-geoph-itera/lindu-software/blob/package/src/lindu/Widgets/Images/screenshots/lindu-logo.png" alt="Lindu Logo" width="200"/>

@@ -4,11 +4,18 @@ from pathlib import Path
 import sys
 from PySide2.QtGui import QIcon
 
-from PySide2.QtWidgets import QApplication, QMainWindow, QMessageBox
-from PySide2.QtCore import QFile
+from PySide2.QtWidgets import QApplication, \
+                            QMainWindow, \
+                            QMessageBox
+
+from PySide2.QtCore import QFile, Qt
 from PySide2.QtUiTools import QUiLoader
 
-from lindu.Widgets import LTomo2D, LTomo3D, LSeismoView, About, LStyle
+from lindu.Widgets import LT2DCreateModel, \
+                            LTomo3D, \
+                            LSeismoView, \
+                            About, \
+                            LStyle
 
 version = "0.0.1"
 develop = 1
@@ -41,10 +48,11 @@ class LinduWindow(QMainWindow):
     def ui_settings(self):
         self.ui.lindu_tree.expandAll()
         self.ui.lindu_tree.itemClicked.connect(lambda item, column: self.change_stack(item, column))
-        self.ui.prog_check.stateChanged.connect(lambda: self.prog_check_changed(self.ui.prog_check))
+        self.ui.prog_check.clicked.connect(lambda: self.ui.lindu_tree.hide() if self.ui.lindu_tree.isVisible() else self.ui.lindu_tree.show())
+        self.ui.prog_check.clicked.connect(lambda: self.ui.prog_check.setArrowType(Qt.RightArrow) if self.ui.lindu_tree.isVisible() else self.ui.prog_check.setArrowType(Qt.DownArrow))
     
     def stack_settings(self):
-        tomo_2d = LTomo2D(self)
+        tomo_2d = LT2DCreateModel(self)
         self.ui.lindu_stack.insertWidget(0, tomo_2d)
         tomo_3d = LTomo3D(self)
         self.ui.lindu_stack.insertWidget(1, tomo_3d)
@@ -56,15 +64,9 @@ class LinduWindow(QMainWindow):
         self.ui.action_quit.triggered.connect(self.close)
         self.ui.action_about.triggered.connect(self.about_show)
     
-    def prog_check_changed(self, check):
-        if check.isChecked() == True:
-            self.ui.lindu_tree.show()
-        else:
-            self.ui.lindu_tree.hide()
-    
     def change_stack(self, item, column):
         current_text = item.text(column)
-        if(current_text == "2D"):
+        if(current_text == "2D: Create Model"):
             self.ui.lindu_stack.setCurrentIndex(0)
         elif(current_text == "3D"):
             self.ui.lindu_stack.setCurrentIndex(1)

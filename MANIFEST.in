@@ -2,3 +2,4 @@ include src/lindu/Widgets/Images/larges/*.png
 include src/lindu/Widgets/Images/icon/*.png
 include src/lindu/Widgets/ui/*.ui
 include src/lindu/Widgets/Settings/*.qss
+include tests/*.py

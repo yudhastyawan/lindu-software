@@ -106,25 +106,40 @@
          <property name="text">
           <string>2D: Inverse Modeling</string>
          </property>
+         <property name="flags">
+          <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
+         </property>
         </item>
         <item>
          <property name="text">
           <string>2D: Checkerboard Resolution Test</string>
+         </property>
+         <property name="flags">
+          <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
          </property>
         </item>
         <item>
          <property name="text">
           <string>3D: Forward Modeling</string>
          </property>
+         <property name="flags">
+          <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
+         </property>
         </item>
         <item>
          <property name="text">
           <string>3D: Inverse Modeling</string>
          </property>
+         <property name="flags">
+          <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
+         </property>
         </item>
         <item>
          <property name="text">
           <string>3D: Checkerboard Resolution Test</string>
+         </property>
+         <property name="flags">
+          <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
          </property>
         </item>
        </item>
@@ -151,6 +166,14 @@
           <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
          </property>
         </item>
+       </item>
+       <item>
+        <property name="text">
+         <string>Instrument Response</string>
+        </property>
+        <property name="flags">
+         <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
+        </property>
        </item>
       </item>
       <item>

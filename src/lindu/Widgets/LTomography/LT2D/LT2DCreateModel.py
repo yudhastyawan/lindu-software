@@ -11,7 +11,7 @@ from PySide2.QtCore import QFile
 from PySide2.QtUiTools import QUiLoader
 
 from lindu.Widgets.Settings.LStyle import LStyle
-from lindu.Widgets.LTomography.LT2D.tabCreateModel import mainModelDisplay
+from lindu.Widgets.LTomography.LT2D.LT2DCreateModelTab import mainModelDisplay
 
 class LT2DCreateModel(QMainWindow):
     def __init__(self, parent = None):

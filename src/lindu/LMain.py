@@ -12,6 +12,7 @@ from PySide2.QtCore import QFile, Qt
 from PySide2.QtUiTools import QUiLoader
 
 from lindu.Widgets import LT2DCreateModel, \
+                            LT2DFwdModel, \
                             LTomo3D, \
                             LSeismoView, \
                             About, \
@@ -58,6 +59,8 @@ class LinduWindow(QMainWindow):
         self.ui.lindu_stack.insertWidget(1, tomo_3d)
         seismo_view = LSeismoView(self)
         self.ui.lindu_stack.insertWidget(2, seismo_view)
+        tomo_2d_fwd = LT2DFwdModel(self)
+        self.ui.lindu_stack.insertWidget(3, tomo_2d_fwd)
         self.ui.lindu_stack.setCurrentIndex(1)
 
     def menu_settings(self):
@@ -72,6 +75,8 @@ class LinduWindow(QMainWindow):
             self.ui.lindu_stack.setCurrentIndex(1)
         elif(current_text == "Seismo View"):
             self.ui.lindu_stack.setCurrentIndex(2)
+        elif(current_text == "2D: Forward Modeling"):
+            self.ui.lindu_stack.setCurrentIndex(3)
     
     def about_show(self):
         about = About(self)
